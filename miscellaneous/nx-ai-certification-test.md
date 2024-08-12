@@ -157,3 +157,15 @@ python3 Benchmark-Suite/run_suite.py
 ```
 
 The test should now automatically benchmark all the models you've added and give you an overview of how this model/device performs.
+
+## Troubleshooting
+
+If the device is working well, but the test is not passing, feel free to contact us for support. To make it easier for us to provide support, please include log files so that we can see what is going wrong on the device.&#x20;
+
+Make sure you're in the root folder of the test suite and run the following command to gather all the log files:
+
+```shellscript
+find ./ -type f \( -name "*.log" -o -name "failed_output.json" \) -printf '%P\n' | xargs tar -czf test_logs.tgz
+```
+
+This will create a file called `test_logs.tgz` , please send us this file with your request.
