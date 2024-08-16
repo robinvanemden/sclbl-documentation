@@ -32,9 +32,9 @@ We start the development of a novel edge AI solution by creating a new project o
 
 ![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.05.48.png>)
 
-The Edge Impulse platform is very intuitive, and allows you to upload and annotate training examples and to train object detection models. We will focus on the Edge Impulse's FOMO model; find a quick getting started guide here: [https://docs.edgeimpulse.com/docs/tutorials/detect-objects-using-fomo](https://docs.edgeimpulse.com/docs/tutorials/detect-objects-using-fomo).
+The Edge Impulse platform is very intuitive, and allows you to upload and annotate training examples and to train object detection models. We will focus on the Edge Impulse's Yolov5 model; find a quick getting started guide here: [https://docs.edgeimpulse.com/docs/tutorials/detect-objects-using-fomo](https://docs.edgeimpulse.com/docs/tutorials/detect-objects-using-fomo).
 
-The important bit for this tutorial is to train an object detection model and to select the correct FOMO models. Work through the data acquisition and impulse creation steps in the Edge Impulse platform to get to the object detection model:
+The important bit for this tutorial is to train an object detection model and to select the correct Yolo models. Work through the data acquisition and impulse creation steps in the Edge Impulse platform to get to the object detection model:
 
 ![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.06.50.png>)
 
@@ -60,7 +60,7 @@ You will arrive at the model upload page, from where you can [select "linking an
 
 ![](<../../.gitbook/assets/Screenshot from 2024-05-22 13-57-34.png>)
 
-At this point you can use your Edge Impulse API key and project ID to import your trained model directly from Edge Impulse. Your API key kan be found at your dashboard, and the Project ID can be found in the URL:
+At this point you can use your Edge Impulse API key and project ID to import your trained model directly from Edge Impulse. Your API key can be found at your dashboard, and the Project ID can be found in the URL:
 
 ![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.21.41.png>)
 
@@ -68,7 +68,7 @@ After filling out the API- and project- keys you can click the "Link model" butt
 
 ![](<../../.gitbook/assets/Screenshot from 2024-05-22 14-26-41.png>)
 
-You can obviously change the model name and documentation (as usual), but effectvely, after the import, the model is directly available for deployment. Once you click "Return to models" you will see the model on the top of you model list:
+You can obviously change the model name and documentation (as usual), but effectively, after the import, the model is directly available for deployment. Once you click "Return to models" you will see the model on the top of you model list:
 
 ![](<../../.gitbook/assets/Screenshot from 2024-05-22 14-28-47.png>)
 
@@ -76,97 +76,43 @@ You are now ready to deploy your model to your selected edge device.
 
 ## 3. **Deploying (and testing) your model on your edge device**
 
-There are multiple ways in which you can use the Nx AI cloud to [deploy your model to you selected edge device](../../nx-ai-cloud/deployment-and-device-management.md). However, if you still need to configure the edge device, the easiest way of setting things up is to navigate to the AI manager that is running on the device. It can usually be found at port `8081` or through the device setup menu. You should get here:
+In Nx Meta, connect to your system and open the plugin page.
 
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.30.57.png>)
+<div align="left">
 
-At this point you are configuring the setup of the Nx AI manager on this specific device.  For a more elaborate setup please see our [AI manager documentation](broken-reference). However, the steps are simple enough:
+<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-29 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-1. First, go to the model tab, click the "Select model" button, and select your newly coupled Edge Impulse model from the list. At this point, if you have not yet done so, you might be asked to [register your device](broken-reference).\
-   \
-   ![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.33.25.png>)
-2. After [selecting a model](broken-reference), you can select your [input settings](broken-reference). At this point you are able to select and preview up to four input cameras (depending on your targeted edge device).\
-   \
-   ![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.36.09.png>)
-3. Finally, you can configure your [output settings](broken-reference). The default settings should work just fine.
+</div>
 
-Once you are done configuring, you can navigate to the ["Run" tab of the AI manager](broken-reference) to start generating inferences. Alternatively, you can run a single inference [test on the edge device](broken-reference) to see if everything is correctly configured. Testing should give something like this:
+Click "Manage device" and select the model you created.
 
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.41.26.png>)\
+<div align="left">
 
+<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-58.png" alt="" width="314"><figcaption></figcaption></figure>
 
-This all worked. Great.&#x20;
+</div>
 
-However, at this point it is good to also understand the generated output; here we present the top of the generated JSON that will be send to your specified output location (by default, the Nx data logger):
+And click on "Use this model" return to the plugin.
 
-```
-// Example JSON output (top):
+The video feed should then show some detection boxes when you activate the object tab.
 
-[
-  {
-    "deviceId": "0ec6b6913d844ac1bd1621ddaaf726a0-2",
-    "modelId": "31107bd7-b3d2-4f4e-9598-fb46b8e5e4b5",
-    "sourceId": "input-0",
-    "sourceName": "",
-    "outputType": "json",
-    "outputFormat": "namedObject",
-    "outputDims": [
-      [
-        1,
-        12,
-        12,
-        3
-      ]
-    ],
-    "outputDataTypes": [
-      1
-    ],
-    "output": {
-      "StatefulPartitionedCall:0": [
-        0.9991597,
-        0.0004198,
-        0.0004206,
-        0.9988859,
-        0.0008452,
-        0.0002688,
-        0.9887891,
-        0.0037218,
-```
+<div align="left">
 
-\
-The JSON object starts with some meta data describing the device, model, and camera name. Next, you see the output dimensions. In this case the dimensions are `12 x 12 x 3` which is the standard Edge Impulse FOMO output when a model contains 3 output classes: effectively the model output is a 12x12 grid on top of the 96x96 pixel input image (the image is automatically rescaled by the AI manager) detailing for each of the 12x12=144 blocks of the image which class is detected. What follows is a list (called `StatefulPartitionedCall:0:` of effectively triplets containing the probability for each output class. _I.e.,_ in the above output, the first three blocks of the image are identified as class 1 with probablilities `.9991597`, `.9988859`, and `.9887891` respectively.
+<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 15-04-04.png" alt="" width="375"><figcaption></figcaption></figure>
 
-You can use the output anyway you want by sending it to the Nx data logger or your own application platform.&#x20;
+</div>
 
-That's it really; you have just trained and edge deployed a pretty nifty AI model.&#x20;
-
-{% hint style="info" %}
-Please note that depending on which option you chose for **Resize mode** when configuring the Impulse during training, you can configure the AI Manager to adopt the same mode by changing the value of [**InputCameraXAspectRatio**](broken-reference) in the settings file.
-{% endhint %}
+That's it really; you have just trained and deployed a pretty nifty AI model to your edge device.
 
 ## 4. **Retraining your model**
 
-Although steps 1 to 3 basically got you started, there are a few nice tricks you can use to improve your solution over time. Particularly, you can set the on-device AI manager to capture new training images when needed. On the "Output" tab in the AI manager, you will see the "Upload images with low certainty" box:
+Although steps 1 to 3 basically got you started, there are a few nice tricks you can use to improve your solution over time. Particularly, you can set the on-device AI manager to capture new training images when needed.&#x20;
 
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.50.43.png>)
+Set up a [postprocessor](https://github.com/scailable/sclbl-integration-sdk/tree/main/postprocessor-python-edgeimpulse-example) from the integration SDK for image uploads. You can set the postprocessor up to send images every `N` seconds or when the result is below a certain `P` value.
 
-{% hint style="info" %}
-Please note that all the functionality described here can also be configured by directly editing the [on-device settings](broken-reference).
-{% endhint %}
+Let the system run with the postprocessor for a while.
 
-The image capture feature, which is specific for Edge Impulse models, allows you to set a threshold controlling whether or not an input image will be stored to become input for model re-training. If you set the "Probability threshold" to `.8` for example, _any image that contains one or more block(s) (out of the 144 blocks) for which the highest class probability (i.e., the probability of the recognized class) is lower than `.8` will be send together with the model's output_. By default this image added as a based 64 encoded string to the output JSON:
-
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.49.53.png>)
-
-After running the model for some time, and assuming you are using default logging of the output data to the Nx data logger, you will be able to view your device in the Nx AI cloud, and view the resulting data:
-
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.54.48.png>)
-
-Once you have collected a batch of data it is possible to directly upload the data to the Edge Impulse project you started with by clicking the upload to Edge Impulse button:
-
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 16.02.03.png>)
-
-At this point you can navigate back to your Edge Impulse project, label the images, retrain the model, and [re-deploy your model](from-edge-impulse.md#3.-deploying-and-testing-you-model-on-your-edge-device).
+At this point you can navigate back to your Edge Impulse project, label the uploaded images, retrain the model, and then [re-deploy your model](from-edge-impulse.md#3.-deploying-and-testing-you-model-on-your-edge-device).
 
 ## Wrap up
 
