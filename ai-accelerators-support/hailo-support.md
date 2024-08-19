@@ -97,6 +97,6 @@ To monitor Hailo usage with the `hailortcli monitor` command, you need to set a 
     ```bash
     sudo service networkoptix-metavms-mediaserver restart
     ```
+3. **Run** `hailortcli monitor`
 
-
-
+<figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
