@@ -30,6 +30,7 @@
 * [How to get support](support-and-troubleshooting/how-to-get-support.md)
 * [Troubleshooting](support-and-troubleshooting/troubleshooting/README.md)
   * [Plugin checks](support-and-troubleshooting/troubleshooting/plugin-checks.md)
+  * [OS checks](support-and-troubleshooting/troubleshooting/os-checks.md)
   * [System checks](support-and-troubleshooting/troubleshooting/system-checks.md)
   * [Things to try](support-and-troubleshooting/troubleshooting/things-to-try.md)
   * [Controlling the server and the plugin](support-and-troubleshooting/troubleshooting/controlling-the-server-and-the-plugin.md)
