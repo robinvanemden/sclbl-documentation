@@ -36,7 +36,7 @@ This issue occurs when the visualized stream differs from the one used for AI in
 
 <figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.1&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8ZnW7QaSsRFItDttyEXycruOmPMkS0U_hLiykPnOtn7D5k9xtRW1QSuIVYLoMtJAwL9h7jFE5JlgElX7KaBMBQe2uatQe15E0BWN5Td0RATvQOfHZFZq2YtDE&#x26;disp=emb&#x26;realattid=ii_m050ie1e0" alt=""><figcaption></figcaption></figure>
 
-To fix this issue, either set the plugin to use the Primary stream or view the ‘Low’ resolution stream in the Client:
+To fix the issue where the plugin operates on the secondary stream while you are viewing the primary stream, either set the plugin to use the Primary stream or view the ‘Low’ resolution stream in the Client:
 
 <figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.2&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8lXNyzRSaNphCAACkVJjOUOVYmKzkcZC0DllLD045hD7Rn4RWByF8RtqAItqGTr1SzvXWU6FG6SUV4PMonq30IZ84HktwnnYqyEGIKIUgMbbAn_y0nHyT931s&#x26;disp=emb&#x26;realattid=ii_m050ir0f2" alt=""><figcaption></figcaption></figure>
 
