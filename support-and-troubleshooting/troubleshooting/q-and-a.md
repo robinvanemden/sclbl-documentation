@@ -27,3 +27,17 @@ sudo journalctl -u networkoptix-metavms-mediaserver.service
 ### Is it possible to send output to a different endpoint? <a href="#is-it-possible-to-send-output-to-a-different-endpoint" id="is-it-possible-to-send-output-to-a-different-endpoint"></a>
 
 No this is not possible. It is possible to access the data and pass it through.TODO: show how to do that
+
+
+
+### The bounding boxes appear to be out of sync with the stream
+
+Are you running test streams? If so, this issue is usually due to a secondary and primary stream themselves being out of sync and visualizing another stream than the one used for the AI inference. If the plugin works on the Secondary stream and you are viewing the Primary stream, it may seem in the video as if the bboxes are out of sync:
+
+<figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.1&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8ZnW7QaSsRFItDttyEXycruOmPMkS0U_hLiykPnOtn7D5k9xtRW1QSuIVYLoMtJAwL9h7jFE5JlgElX7KaBMBQe2uatQe15E0BWN5Td0RATvQOfHZFZq2YtDE&#x26;disp=emb&#x26;realattid=ii_m050ie1e0" alt=""><figcaption></figcaption></figure>
+
+To fix this issue, either set the plugin to use the Primary stream or view the ‘Low’ resolution stream in the Client:
+
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.2&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8lXNyzRSaNphCAACkVJjOUOVYmKzkcZC0DllLD045hD7Rn4RWByF8RtqAItqGTr1SzvXWU6FG6SUV4PMonq30IZ84HktwnnYqyEGIKIUgMbbAn_y0nHyT931s&#x26;disp=emb&#x26;realattid=ii_m050ir0f2" alt=""><figcaption></figcaption></figure>
