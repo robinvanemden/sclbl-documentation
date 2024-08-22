@@ -32,7 +32,7 @@ No this is not possible. It is possible to access the data and pass it through.T
 
 ### The bounding boxes appear to be out of sync with the stream
 
-Are you running test streams? If so, this issue is usually due to a secondary and primary stream themselves being out of sync and visualizing another stream than the one used for the AI inference. If the plugin works on the Secondary stream and you are viewing the Primary stream, it may seem in the video as if the bboxes are out of sync:
+This issue occurs when the visualized stream differs from the one used for AI inference. It typically happens when using a [test camera](https://support.networkoptix.com/hc/en-us/articles/360018067074-Testcamera-IP-Camera-Emulator). The problem usually arises from a mismatch between the primary and secondary streams, leading to the visualization of a different stream than the one used for AI processing. If the plugin operates on the secondary stream while you are viewing the primary stream, it can appear as though the bounding boxes are out of sync in the video:
 
 <figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.1&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8ZnW7QaSsRFItDttyEXycruOmPMkS0U_hLiykPnOtn7D5k9xtRW1QSuIVYLoMtJAwL9h7jFE5JlgElX7KaBMBQe2uatQe15E0BWN5Td0RATvQOfHZFZq2YtDE&#x26;disp=emb&#x26;realattid=ii_m050ie1e0" alt=""><figcaption></figcaption></figure>
 
