@@ -38,6 +38,6 @@ Are you running test streams? If so, this issue is usually due to a secondary an
 
 To fix this issue, either set the plugin to use the Primary stream or view the ‘Low’ resolution stream in the Client:
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
-
 <figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.2&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8lXNyzRSaNphCAACkVJjOUOVYmKzkcZC0DllLD045hD7Rn4RWByF8RtqAItqGTr1SzvXWU6FG6SUV4PMonq30IZ84HktwnnYqyEGIKIUgMbbAn_y0nHyT931s&#x26;disp=emb&#x26;realattid=ii_m050ir0f2" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
