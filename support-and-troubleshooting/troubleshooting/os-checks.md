@@ -1,6 +1,46 @@
 # OS checks
 
-### **Failed to create SHM:: Function not implemented**
+## Check Internet and DNS Connectivity
+
+To troubleshoot and verify internet connectivity and DNS functionality on a Linux system, you can follow these steps:
+
+#### 1. Check Network Connection
+
+First, ensure that your Linux machine is connected to a network. You can check this by looking at your network interface's status.
+
+*   **Check network interface status:** Open a terminal and run the following command:
+
+    ```bash
+    ip a
+    ```
+
+    This command will display all network interfaces and their IP addresses. Look for the interface (e.g., `eth0` for Ethernet or `wlan0` for Wi-Fi) and verify that it has an IP address assigned. If there is no IP address, the interface may not be connected to a network.
+
+#### 2. Test Internet Connectivity
+
+To test if you have internet connectivity, you can try pinging an external server like Google's DNS server.
+
+*   **Ping an external server:** Run the following command:
+
+    ```bash
+    ping -c 4 8.8.8.8
+    ```
+
+    This command sends four ICMP echo requests to Google's DNS server. If you receive replies, your internet connection is working.
+
+#### 3. Verify DNS Functionality
+
+If your network connection is active but you suspect DNS issues, you should verify that DNS resolution functions correctly.
+
+*   **Ping a domain name:** To check if DNS is working, try pinging a domain name:
+
+    ```bash
+    ping -c 4 google.com
+    ```
+
+    If the domain name resolves to an IP address and you receive replies, your DNS works. If not, you might see an error like "unknown host," indicating a DNS resolution issue.
+
+## **Failed to create SHM:: Function not implemented**
 
 The issue is that the image on the device has not been compiled with the SHM flag. We work with shared memory. (By default, Ubuntu, and Debian, have SHM enabled.) In other words, `CONFIG_SYSVIPC=y` needs to be enabled.
 
