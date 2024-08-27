@@ -48,3 +48,51 @@ Explanation and Clarification:
     This is a configuration option in the Linux kernel. `CONFIG_SYSVIPC` controls whether System V IPC (which includes shared memory, semaphores, and message queues) is enabled in the kernel. The `y` indicates that this option should be enabled. Without this setting, shared memory and other IPC mechanisms would not be available.
 
 Summary: The current device's software image doesn't support shared memory because the SHM flag wasn't enabled during compilation. To fix this, the `CONFIG_SYSVIPC=y` option needs to be enabled in the kernel configuration.
+
+## Make sure _libgomp_ is installed
+
+As is mentioned in 1. Install Network Optix, you need to have `libgomp` (the GNU Offloading and Multi Processing Runtime Library)  installed. You can do so with:
+
+```
+sudo apt update
+sudo apt upgrade -y
+sudo apt-get install -y libgomp1 gdebi wget
+```
+
+It should not be necessary after you have installed it. But to double check whether `libgomp` is indeed installed on your system, you can use one of the following methods depending on your operating system:
+
+#### 1. **On Linux (Debian/Ubuntu)**
+
+You can use the `dpkg` command:
+
+```bash
+dpkg -l | grep libgomp
+```
+
+If `libgomp` is installed, you will see an output listing the package details. If it is not installed, there will be no output.
+
+Alternatively, you can use the `apt` command to search for the package:
+
+```bash
+apt list --installed | grep libgomp
+```
+
+#### 2. **On Linux (RedHat/CentOS/Fedora)**
+
+You can use the `rpm` command to check if `libgomp` is installed:
+
+```bash
+rpm -qa | grep libgomp
+```
+
+If `libgomp` is installed, this will display the package name and version.
+
+#### 3. **Using the `ldconfig` Command**
+
+You can also check if the shared library is available using `ldconfig`:
+
+```bash
+ldconfig -p | grep libgomp
+```
+
+This command will list the path to `libgomp.so` if it is installed.
