@@ -6,7 +6,7 @@
 
 * [Get started with the NX AI Manager plugin](nx-ai-manager/get-started-with-the-nx-ai-manager-plugin.md)
 * [1. Install Network Optix](nx-ai-manager/1.-install-network-optix.md)
-* [2. Install NX AI Manager plugin](nx-ai-manager/2.-install-nx-ai-manager-plugin.md)
+* [2. Install NX AI Plugin](nx-ai-manager/2.-install-nx-ai-plugin.md)
 * [3. Configure the Nx AI Manager plugin](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin.md)
 * [4. Other Network Optix Plugin Settings](nx-ai-manager/3.-other-network-optix-plugin-settings.md)
 * [5. Manual Plugin Installation](nx-ai-manager/4.-manual-plugin-installation.md)

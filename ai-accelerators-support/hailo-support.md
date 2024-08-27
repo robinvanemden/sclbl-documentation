@@ -7,7 +7,7 @@ Other generic ONNX models need to be locally compiled by the user using the Hail
 ### Deploying on x86\_64 machine with Hailo-8
 
 1. The first step is to verify that you have a compatible HailoRT driver installed. Please check out this [table](supported-ai-accelerators.md) to determine if your driver version is supported.
-2. Next, install the Nx AI plugin by following [these instructions](../nx-ai-manager/2.-install-nx-ai-manager-plugin.md).
+2. Next, install the Nx AI plugin by following [these instructions](../nx-ai-manager/2.-install-nx-ai-plugin.md).
 3. If all is well, you should be able to select the Hailo runtime when enabling the Nx plugin as shown below:
 
 ![](../.gitbook/assets/hailo-runtime-in-plugin-ui.png)
@@ -97,8 +97,8 @@ To monitor Hailo usage with the `hailortcli monitor` command, you need to set a 
     ```bash
     sudo service networkoptix-metavms-mediaserver restart
     ```
-3. **Run hailortcli** \
-   \
+3. **Run hailortcli**\
+   &#x20;\
    `HAILO_MONITOR=1 hailortcli monitor`
 
 <figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
