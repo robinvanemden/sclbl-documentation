@@ -2,7 +2,7 @@
 
 ## Check Internet and DNS Connectivity
 
-To troubleshoot and verify internet connectivity and DNS functionality on a Linux system, you can follow these steps:
+To get started with the AI Manager, ensure you have internet access and a functioning DNS. To troubleshoot and verify internet connectivity and DNS functionality on a Linux system, follow these steps:
 
 #### 1.. Test Internet Connectivity
 
