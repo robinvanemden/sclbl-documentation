@@ -102,3 +102,39 @@ To monitor Hailo usage with the `hailortcli monitor` command, you need to set a 
    `HAILO_MONITOR=1 hailortcli monitor`
 
 <figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+
+## Experimental `.ini` setting <a href="#enable-.ini-settings" id="enable-.ini-settings"></a>
+
+Explicitly setting multiple Nx AI runtime engines is controlled by an `.ini` file. This `.ini` file does not exist by default and must be created by the user.
+
+Create an empty file by running:
+
+`sudo mkdir -p /home/networkoptix-metavms/.config/nx_ini sudo touch /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini sudo chmod 666 /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini`
+
+Then restart the mediaserver. Once the mediaserver is restarted, the .ini file should be filled with defaults. Each setting should have a description in the .ini file.
+
+Now, you can set multiple runtimes through:&#x20;
+
+```
+#enableOutput=false
+
+# If enabled, the NxAI Plugin, NXAI Manager, and Inference Engine logs will be logged to the console. Default: false
+#logToConsole=false
+
+# If enabled, the NxAI Plugin will send frames to the AI Manager even when inactive. Default: false
+#sendFramesOverride=false
+
+# The path of the AI Manager's socket file is listening for messages. Default: "/tmp/nxai_manager.sock"
+#AIManagerSocketPath="/tmp/nxai_manager.sock"
+
+# The path of the socket file the plugin will listen for messages. Default: "/tmp/nxai_plugin.sock"
+#PluginSocketPath="/tmp/nxai_plugin.sock"
+
+# The URL of the NXAI cloud. Default: "https://api.sclbl.nxvms.com"
+#CloudAPI="https://api.sclbl.nxvms.com"
+
+# The AI Manager will spawn this many runtimes per model. Default: 1
+runtimesPerModel=2
+
+
+```
