@@ -14,7 +14,7 @@ mkdir nxai_test
 cd nxai_test
 
 ## Download testing suite
-wget https://download.sclbl.net/NXAI_Test/nxai_test.tgz
+wget https://artifactory.nxvms.dev/artifactory/nxai_open/NXAITest/nxai_test.tgz
 
 ## Unpack testing suite
 tar -xvf nxai_test.tgz
@@ -124,7 +124,7 @@ mkdir nxai_benchmark
 cd nxai_benchmark
 
 ## Download testing suite
-wget https://download.sclbl.net/NXAI_Test/nxai_benchmark.tgz
+wget https://artifactory.nxvms.dev/artifactory/nxai_open/NXAITest/nxai_benchmark.tgz
 
 ## Unpack testing suite
 tar -xvf nxai_benchmark.tgz
