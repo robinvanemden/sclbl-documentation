@@ -109,9 +109,21 @@ Explicitly setting multiple Nx AI runtime engines is controlled by an `.ini` fil
 
 Create an empty file by running:
 
-`sudo mkdir -p /home/networkoptix-metavms/.config/nx_ini sudo touch /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini sudo chmod 666 /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini`
 
-Then restart the mediaserver. Once the mediaserver is restarted, the .ini file should be filled with defaults. Each setting should have a description in the .ini file.
+
+```bash
+sudo mkdir -p /home/networkoptix-metavms/.config/nx_ini 
+sudo touch /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini 
+sudo chmod 666 /home/networkoptix-metavms/.config/nx_ini/nxai_plugin.ini
+```
+
+Then restart the mediaserver:
+
+```
+sudo service networkoptix-metavms-mediaserver restart
+```
+
+Once the mediaserver is restarted, the .ini file should be filled with defaults. Each setting should have a description in the .ini file.
 
 Now, you can set multiple runtimes through:&#x20;
 
