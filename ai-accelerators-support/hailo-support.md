@@ -111,7 +111,7 @@ If you encounter the following error (actual page size might vary), your host do
 [HailoRT] [error] CHECK_AS_EXPECTED failed - max_desc_page_size given 16384 is bigger than hw max desc page size 4096"
 ```
 
-To overcome this issue, add the text below to /etc/modprobe.d/hailo\_pci.conf. Create the file if it doesn't exist and set the max\_desc\_page\_size to the relevant size mentioned in the error (e.g. 4096):
+This issue happens regularly on ARM64 devices, such as on the Raspberry Pi AI Kit. To overcome this issue, add the text below to /etc/modprobe.d/hailo\_pci.conf. Create the file if it doesn't exist and set the max\_desc\_page\_size to the relevant size mentioned in the error (e.g. 4096):
 
 ```
 options hailo_pci force_desc_page_size=4096
