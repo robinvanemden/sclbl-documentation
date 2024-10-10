@@ -103,6 +103,29 @@ To monitor Hailo usage with the `hailortcli monitor` command, you need to set a 
 
 <figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
+## PCIe descriptor page size error
+
+If you encounter the following error (actual page size might vary), your host doesn't support some specific PCIe descriptor page size:
+
+```
+[HailoRT] [error] CHECK_AS_EXPECTED failed - max_desc_page_size given 16384 is bigger than hw max desc page size 4096"
+```
+
+To overcome this issue, add the text below to /etc/modprobe.d/hailo\_pci.conf. Create the file if it doesn't exist and set the max\_desc\_page\_size to the relevant size mentioned in the error (e.g. 4096):
+
+```
+options hailo_pci force_desc_page_size=4096
+# you can do this by running the following command:
+echo 'options hailo_pci force_desc_page_size=4096' >> /etc/modprobe.d/hailo_pci.conf
+```
+
+Reboot the machine so this change takes effect. You can also reload the driver without rebooting by running the following commands:
+
+```
+modprobe -r hailo_pci
+modprobe hailo_pci
+```
+
 ## Experimental `.ini` setting <a href="#enable-.ini-settings" id="enable-.ini-settings"></a>
 
 Explicitly setting multiple Nx AI runtime engines is controlled by an `.ini` file. This `.ini` file does not exist by default and must be created by the user.
