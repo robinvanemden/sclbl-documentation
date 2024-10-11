@@ -1,8 +1,30 @@
 # Hailo Support
 
-It's currently possible to convert Teachable Machine models to the Hailo-ONNX format on the cloud.
+Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX format. Due to the nature and involvement in the compilation process, it's prohibitively complicated to automate this process on the cloud. Hence, we provide a workaround where the user compiles the model locally, then upload the compiled Hailo-ONNX file to the Nx AI Cloud.
 
-Other generic ONNX models need to be locally compiled by the user using the Hailo dataflow compiler, and then the generated file needs to be uploaded to the Nx AI Cloud. This is due to the nature of compiling ONNX models in Hailo format. For this the user needs to upload calibration images and specify the subgraph that the Hailo chips can accelerate. This is not possible in the available cloud conversion.
+### Compiling an ONNX model
+
+#### Requirements
+
+* Python 3.8
+* Python environment
+* **Hailo Dataflow compiler** and **HailoRT Python API** installed in that environment
+
+#### Example
+
+In this example, we'll go over the compilation steps of a Yolov4-tiny model trained on the COCO dataset. Albeit, most of the instructions mentioned here apply to all kinds of ONNX models, with some requiring changes based on the model.
+
+{% file src="../.gitbook/assets/object-detection-640x640.onnx" %}
+A Yolov4-tiny model that's conforming to Nx's model requirements
+{% endfile %}
+
+{% file src="../.gitbook/assets/compile_onnx.py" %}
+A Python script to compile ONNX files.
+{% endfile %}
+
+{% file src="../.gitbook/assets/update_model_io.py" %}
+A Python script to correct the ONNX IO names and shapes to match the originals.
+{% endfile %}
 
 ### Deploying on x86\_64 machine with Hailo-8
 
