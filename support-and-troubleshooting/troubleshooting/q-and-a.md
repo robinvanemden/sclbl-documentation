@@ -52,3 +52,12 @@ Only if our support team has requested you install the nightly version of the AI
 sudo bash -c "$(wget -q -O - https://artifactory.nxvms.dev/artifactory/nxai_open/NXAIPlugin/install.sh)" package=nightly
 ```
 
+
+
+### Is it safe to update?
+
+If you want to update or re-install the Nx AI Plugin you can safely re-run the install command.&#x20;
+
+The old version of the plugin will be removed by the install script before the new version is installed.
+
+Your settings will be stored as far as possible. You still need to check the settings, because in some cases new options are available that require some changes. An example might be a new runtime that is available for your hardware.
