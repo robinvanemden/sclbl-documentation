@@ -2,7 +2,7 @@ import onnx
 from os.path import *
 
 _here = dirname(abspath(__file__))
-onnx_path = join(_here, 'best-complete_hailo.onnx')
+onnx_path = join(_here, 'model_hailo.onnx')         # TODO: insert the path to the ONNX model
 new_onnx_path = splitext(onnx_path)[0] + '_new.onnx'
 # Load the ONNX model
 model = onnx.load(onnx_path)
@@ -48,8 +48,8 @@ for i in range(len(graph.input)):
 # Update shape of mask- input to [640, 640]
 for i in range(len(graph.input)):
     if graph.input[i].name == 'mask-':
-        graph.input[i].type.tensor_type.shape.dim[0].dim_value = 640
-        graph.input[i].type.tensor_type.shape.dim[1].dim_value = 640
+        graph.input[i].type.tensor_type.shape.dim[0].dim_value = 640    # TODO: change to the new shape
+        graph.input[i].type.tensor_type.shape.dim[1].dim_value = 640    # TODO: change to the new shape
 
 # Replace shape of the output to [20, 6]
 for i in range(len(graph.output)):

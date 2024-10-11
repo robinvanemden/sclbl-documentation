@@ -34,9 +34,8 @@ def calib_dataset():
 runner = ClientRunner(hw_arch=chosen_hw_arch)
 hn, npz = runner.translate_onnx_model(onnx_path, onnx_model_name,
                                 start_node_names=['sclbl-onnx-node1'],  # TODO: set the start node names       
-                                end_node_names=['/model.22/Concat_2',   # TODO: set the end node names
-                                                '/model.22/Concat_1', 
-                                                '/model.22/Concat'], 
+                                end_node_names=['Conv_66',   # TODO: set the end node names
+                                                'Conv_282'], 
 )
 
 runner.optimize(calib_dataset())

@@ -9,6 +9,7 @@ Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX f
 * Python 3.8
 * Python environment
 * **Hailo Dataflow compiler** and **HailoRT Python API** installed in that environment
+* A validation dataset
 
 #### Example
 
@@ -18,11 +19,21 @@ In this example, we'll go over the compilation steps of a Yolov4-tiny model trai
 A Yolov4-tiny model that's conforming to Nx's model requirements
 {% endfile %}
 
+To compile the model, you can run the Python script below after changing the ONNX path.
+
+{% hint style="info" %}
+To  adap this script for any other ONNX model, make sure to check out the TODO comments and adjust them accordingly.
+{% endhint %}
+
 {% file src="../.gitbook/assets/compile_onnx.py" %}
+
+{% file src="../.gitbook/assets/update_model_io.py" %}
+
+{% file src="broken-reference" %}
 A Python script to compile ONNX files.
 {% endfile %}
 
-{% file src="../.gitbook/assets/update_model_io.py" %}
+{% file src="broken-reference" %}
 A Python script to correct the ONNX IO names and shapes to match the originals.
 {% endfile %}
 
