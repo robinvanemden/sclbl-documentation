@@ -9,7 +9,7 @@ Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX f
 * Python 3.8
 * Python environment
 * **Hailo Dataflow compiler** and **HailoRT Python API** installed in that environment
-* A validation dataset
+* A set of calibration images (similar to images used to train the model)
 
 ### Example
 
@@ -37,16 +37,16 @@ The code performs the following tasks:
 The value of chip can be either `hailo` for Hailo-8 chips or `hailo-8l` for Hailo-8L chips.
 {% endhint %}
 
-{% hint style="info" %}
-To  adapt this script for any other ONNX model, make sure to check out the TODO comments and adjust them accordingly.
-{% endhint %}
-
 After all the aforementioned steps are executed, a new ONNX file is generated. The latter needs to have his IOs metadata (names & shapes) adjusted. The Python script below is used for that purpose, it creates a new ONNX model with the adjusted inputs and outputs.\
 The idea of the script is to make sure the generated ONNX is conforming to Nx's ONNX [requirements](../for-data-scientists/onnx-requirements.md).
 
 {% file src="../.gitbook/assets/update_model_io.py" %}
 Python script to adjust the ONNX input & ouptut metadata.
 {% endfile %}
+
+{% hint style="info" %}
+To  adapt these two scripts for any other ONNX model, make sure to check out the TODO comments and adjust them accordingly.
+{% endhint %}
 
 ## Deploying on a machine with Hailo-8 or Hailo-8L chips
 
