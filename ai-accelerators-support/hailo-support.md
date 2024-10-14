@@ -2,16 +2,16 @@
 
 Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX format. Due to the nature and involvement in the compilation process, it's prohibitively complicated to automate this process on the cloud. Hence, we provide a workaround where the user compiles the model locally, then upload the compiled Hailo-ONNX file to the Nx AI Cloud.
 
-### Compiling an ONNX model
+## Compiling an ONNX model
 
-#### Requirements
+### Requirements
 
 * Python 3.8
 * Python environment
 * **Hailo Dataflow compiler** and **HailoRT Python API** installed in that environment
 * A validation dataset
 
-#### Example
+### Example
 
 In this example, we'll go over the compilation steps of a Yolov4-tiny model trained on the COCO dataset. Albeit, most of the instructions mentioned here apply to all kinds of ONNX models, with some requiring changes based on the model.
 
@@ -21,23 +21,34 @@ A Yolov4-tiny model that's conforming to Nx's model requirements
 
 To compile the model, you can run the Python script below after changing the ONNX path.
 
+{% file src="../.gitbook/assets/compile_onnx (1).py" %}
+Python script to compile an ONNX model to the Hailo format
+{% endfile %}
+
+The code performs the following tasks:
+
+1. it transpiles the ONNX model to another format optimized for Hailo,
+2. it quantizes and optimizes the model using the supplied set of calibration images,
+3. it compiles the model to a HEF and embedds it inside an ONNX file as an operator, while the keeping the pre-processing and post-processing intact. \
+   **Please note that this step returns an ONNX file that can have different input & output names and shapes.**
+4. Finally, a new metadata field, named `chip` is injected in the ONNX to save which Hailo chip the model was optimized for. This needed by the Nx AI Cloud to determine the target chip of the model.
+
 {% hint style="info" %}
-To  adap this script for any other ONNX model, make sure to check out the TODO comments and adjust them accordingly.
+The value of chip can be either `hailo` for Hailo-8 chips or `hailo-8l` for Hailo-8L chips.
 {% endhint %}
 
-{% file src="../.gitbook/assets/compile_onnx.py" %}
+{% hint style="info" %}
+To  adapt this script for any other ONNX model, make sure to check out the TODO comments and adjust them accordingly.
+{% endhint %}
+
+After all the aforementioned steps are executed, a new ONNX file is generated. The latter needs to have his IOs metadata (names & shapes) adjusted. The Python script below is used for that purpose, it creates a new ONNX model with the adjusted inputs and outputs.\
+The idea of the script is to make sure the generated ONNX is conforming to Nx's ONNX [requirements](../for-data-scientists/onnx-requirements.md).
 
 {% file src="../.gitbook/assets/update_model_io.py" %}
-
-{% file src="broken-reference" %}
-A Python script to compile ONNX files.
+Python script to adjust the ONNX input & ouptut metadata.
 {% endfile %}
 
-{% file src="broken-reference" %}
-A Python script to correct the ONNX IO names and shapes to match the originals.
-{% endfile %}
-
-### Deploying on x86\_64 machine with Hailo-8
+## Deploying on a machine with Hailo-8 or Hailo-8L chips
 
 1. The first step is to verify that you have a compatible HailoRT driver installed. Please check out this [table](supported-ai-accelerators.md) to determine if your driver version is supported.
 2. Next, install the Nx AI plugin by following [these instructions](../nx-ai-manager/2.-install-nx-ai-plugin.md).
@@ -50,7 +61,7 @@ A Python script to correct the ONNX IO names and shapes to match the originals.
 ![](../.gitbook/assets/plugin-ui.png)
 
 5. To manually verify that the Hailo runtime is downloaded and set up, feel free to check out the content of the `bin` folder of the AI Manager and make sure it contains these files:\
-   \- libhailort.so.4.xx.0\
+   \- libhailort.so.4.xx.0 (xx is the minor version of the library)\
    \- libonnxruntime\_providers\_hailo.so\
    \-libonnxruntime\_providers\_shared.so\
    \- libRuntimeLibrary.so
@@ -60,16 +71,11 @@ ubuntu@ThinkStation-P360-Tower:~$ ls /opt/networkoptix-metavms/mediaserver/bin/p
 installed_runtime.txt libhailort.so.4.17.0 libonnxruntime_providers_hailo.so libonnxruntime_providers_shared.so libRuntimeLibrary.so sclbld sclblmod
 ```
 
-6. Finally, to deploy a model that can be accelerated on the Hailo chip, make sure that it has a `application/x-onnx; device=hailo` model file in the Nx AI Cloud:
+6. Finally, to deploy a model that can be accelerated on the Hailo chip, make sure that it has a `application/x-onnx; device=hailo` or `application/x-onnx; device=hailo-8l` based on the Hailo chip (Hailo-8 or Hailo-8L) model file in the Nx AI Cloud:
 
 ![](../.gitbook/assets/model-files-2.png)
 
-If that is not the case, you'll need to manually compile the ONNX model and upload the generated model to the cloud. Please refer to [this](https://github.com/OAAX-standard/contributions/tree/main/Hailo-8) page for a quick start guide.
-
-### Common issues
-
-* Sometimes, after compiling an ONNX model to a Hailo-ONNX, the input names and shapes are _not_ kept intact. Hence, the model might not work correctly within the Nx AI Manager. \
-  So, please make sure that the generated ONNX conforms to our specifications.
+If that is not the case, you'll need to manually compile the ONNX model and upload the generated model to the cloud as illustrated in the example above.
 
 ### Monitoring
 
