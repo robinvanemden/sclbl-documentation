@@ -43,12 +43,6 @@ getent group render
 
 #### 2. Add 'networkoptix-metavms' to the 'render' Group
 
-**Open a Terminal Window**
-
-* Access the terminal through the application menu or by pressing `Ctrl+Alt+T`.
-
-**Execute the Usermod Command**
-
 *   Run the following command to add the user to the `render` group:
 
     ```bash
