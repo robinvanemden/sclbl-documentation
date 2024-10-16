@@ -16,39 +16,71 @@ The following table contains a compiled list of supported runtimes:
 | Qualcomm (coming soon)                                                  | aarch64          | 2.20.x                                     |
 | MemryX (coming soon)                                                    | aarch64          | 2.2.37                                     |
 
-\*\* Recent Jetpack installs need an additional command to add `networkoptix-metavms` to the  `render` group. This will be automated in a future Nx Server release.
+\*\*  **Additional Steps for Recent JetPack Installations**
 
-You should add the user to the group to ensure that the VMS can fully utilize the NVIDIA GPU. Here's how you can do it:
+For systems using NVIDIA's JetPack SDK, especially recent installations, the `networkoptix-metavms` user might not automatically be added to the `render` group. This group membership is essential for the Network Optix AI Manager plugin to fully utilize NVIDIA GPUs for hardware acceleration. While this process will be automated in a future Nx Server release, for now, you can manually add the user to the `render` group by following these steps:
 
-1.  **Open a Terminal Window**
+#### 1. Check if the 'render' Group Exists
 
-    You can generally access the terminal through the application menu or by pressing `Ctrl+Alt+T`.
-2.  **Execute the Usermod Command**
+First, verify whether the `render` group exists on your system:
 
-    Run the following command to add the user to the `render` group:
+```bash
+getent group render
+```
+
+*   **Expected Output**
+
+    If the `render` group exists, you will see output similar to:
+
+    ```
+    render:x:104:username
+    ```
+
+    This indicates that the group exists and lists the users currently in the group.
+*   **No Output**
+
+    If there's **no output**, the `render` group does not exist on your system. In this case, there's no need to continue with the next steps. Y
+
+#### 2. Add 'networkoptix-metavms' to the 'render' Group
+
+**Open a Terminal Window**
+
+* Access the terminal through the application menu or by pressing `Ctrl+Alt+T`.
+
+**Execute the Usermod Command**
+
+*   Run the following command to add the user to the `render` group:
 
     ```bash
     sudo usermod -aG render networkoptix-metavms
     ```
 
+    **Explanation of the Command:**
+
     * `sudo` runs the command with administrative privileges.
-    * `usermod` is the command used to modify user accounts.
-    * `-aG` appends the user to the specified group(s).
-    * `render` is the group you are adding the user to.
-    * `networkoptix-metavms` is the username.
-3.  **Verify the Group Membership**
+    * `usermod` is used to modify user accounts.
+    * `-aG` appends the user to the specified group(s) without removing them from others.
+    * `render` is the group you're adding the user to.
+    * `networkoptix-metavms` is the username for the Network Optix VMS user.
 
-    You can verify that the user has been added to the `render` group by running:
+#### 3. Verify the Group Membership
 
-    ```bash
-    groups networkoptix-metavms
-    ```
+Confirm that the `networkoptix-metavms` user has been added to the `render` group:
 
-    This command will list all the groups the user is a part of, which should now include `render`.
-4.  **Restart Service**
+```bash
+groups networkoptix-metavms
+```
 
-    For the changes to take effect, you need to restart the Network Optix services:
+*   **Expected Output**
 
-    ```bash
-    sudo systemctl restart networkoptix-mediaserver.service
-    ```
+    The command will list all groups the user is a part of. You should see `render` included in the list.
+
+#### 4. Restart the Network Optix Service
+
+For the changes to take effect, restart the Network Optix media server service:
+
+```bash
+sudo systemctl restart networkoptix-mediaserver.service
+```
+
+* This command restarts the service, allowing it to recognize the updated group permissions.
