@@ -25,7 +25,9 @@ pip3 install -r requirements.txt
 ## Install NX AI Manager
 ./Utilities/install_nxai_manager.sh
 #./Utilities/install_nxai_manager.sh cuda
-#./Utilities/install_nxai_manager.sh hailo
+#./Utilities/install_nxai_manager.sh hailo4.17
+#./Utilities/install_nxai_manager.sh hailo4.18
+#./Utilities/install_nxai_manager.sh hailo4.19
 
 ## Download required models
 python3 Utilities/download_models.py
