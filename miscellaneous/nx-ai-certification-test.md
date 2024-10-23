@@ -167,7 +167,7 @@ If the device is working well, but the test is not passing, feel free to contact
 Make sure you're in the root folder of the test suite and run the following command to gather all the log files:
 
 ```shellscript
-find ./ -type f \( -name "*.log" -o -name "failed_output.json" \) -printf '%P\n' | xargs tar -czf test_logs.tgz
+find ./ -type f \( -name "*.log" -o -name "failed_output.json" \) -printf '%P\n' | xargs tar -czf test_logs.tgz Results/
 ```
 
 This will create a file called `test_logs.tgz` , please send us this file with your request.
