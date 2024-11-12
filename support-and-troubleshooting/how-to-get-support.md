@@ -110,12 +110,12 @@ timeout 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
 curl -s https://api.sclbl.nxvms.com/dev/ >$info_dir/nxai_cloud_connectivity.txt
 # Download a file from the Nx AI Cloud to measure the download speed
 echo "Downloading a test file from the Nx AI Cloud to measure download speed..."
-curl -s -m 10 https://cdn.sclbl.net/file/7b65bdda-39da-4259-b1bf-b0d1dbb7b162.onnx \
-    -o /dev/null -w "Model download speed: %{speed_download} bytes/sec\n" \
-    >$info_dir/nxai_cloud_download_speed.txt
-curl -s -m 10 https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin \
-    -o /dev/null -w "Runtime download speed: %{speed_download} bytes/sec\n" \
-    >>$info_dir/nxai_cloud_download_speed.txt
+curl -s -m 10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -o /dev/null -w "%{speed_download}" |
+    awk '{print "Model download speed: " $1/1048576 " MB/sec"}' \
+        >$info_dir/nxai_cloud_download_speed.txt
+curl -s -m 10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -o /dev/null -w "%{speed_download}" |
+    awk '{print "Runtime download speed: " $1/1048576 " MB/sec"}' \
+        >>$info_dir/nxai_cloud_download_speed.txt
 
 ############################### Zip the information
 zip -r $info_dir.zip $info_dir/* >/dev/null || echo "ERROR: Failed to zip the information."
