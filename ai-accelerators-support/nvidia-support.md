@@ -131,3 +131,8 @@ sudo systemctl restart networkoptix-mediaserver.service
 ```
 
 * This command restarts the service, allowing it to recognize the updated group permissions.
+
+{% hint style="info" %}
+If the AI Manager doesn't work even when the conditions above are met, please refer to our [general troubleshooting section](../support-and-troubleshooting/how-to-get-support.md).
+{% endhint %}
+
