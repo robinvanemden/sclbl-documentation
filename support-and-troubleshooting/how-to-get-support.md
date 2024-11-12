@@ -16,7 +16,7 @@ If your problem is not solved by the steps in the troubleshooting section you ca
 Logs can be gathered by running the following shell script on the relevant machine:
 
 {% hint style="info" %}
-Please make sure you have `zip` installed on the machine as it's used to assemble the collect logs and information in a single archive file
+Please make sure you have the `zip` command installed on the machine as it's used to assemble the collect logs and information in a single archive file
 {% endhint %}
 
 <details>
