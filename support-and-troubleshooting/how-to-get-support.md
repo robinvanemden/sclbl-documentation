@@ -108,6 +108,14 @@ timeout 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
 
 ############################### Check connectivity to the Nx AI Cloud
 curl -s https://api.sclbl.nxvms.com/dev/ >$info_dir/nxai_cloud_connectivity.txt
+# Download a file from the Nx AI Cloud to measure the download speed
+echo "Downloading a test file from the Nx AI Cloud to measure download speed..."
+timeout 10s curl -s https://cdn.sclbl.net/file/7b65bdda-39da-4259-b1bf-b0d1dbb7b162.onnx \
+    -o /dev/null -w "Model download speed: %{speed_download} bytes/sec\n" \
+    >$info_dir/nxai_cloud_download_speed.txt
+timeout 10s curl -s https://artifactory.metavms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/cpu-x86_64-ort.tar.gz \
+    -o /dev/null -w "Runtime download speed: %{speed_download} bytes/sec\n" \
+    >>$info_dir/nxai_cloud_download_speed.txt
 
 ############################### Zip the information
 zip -r $info_dir.zip $info_dir/* >/dev/null || echo "ERROR: Failed to zip the information."
