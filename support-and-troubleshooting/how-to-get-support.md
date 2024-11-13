@@ -31,7 +31,7 @@ Logs can be gathered by running the following shell script on the relevant machi
 # Create directory where the information will be stored
 info_dir=~/nxai_info
 rm -rf $info_dir >/dev/null 2>&1
-rm -rf $info_dir.tar.gz >/dev/null 2>&1
+rm -rf $info_dir.tgz >/dev/null 2>&1
 mkdir -p $info_dir
 
 ############################### Basic System Information
