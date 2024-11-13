@@ -15,10 +15,6 @@ If your problem is not solved by the steps in the troubleshooting section you ca
 
 Logs can be gathered by running the following shell script on the relevant machine:
 
-{% hint style="info" %}
-Please make sure you have the `zip` command installed on the machine as it's used to assemble the collect logs and information in a single archive file
-{% endhint %}
-
 <details>
 
 <summary>Shell script to gather logs and system information</summary>
@@ -27,15 +23,15 @@ Please make sure you have the `zip` command installed on the machine as it's use
 #!/bin/bash
 
 # This script is used to gather information about the HW and SW of the system, in addition to information about the AI Manager and the AI Plugin.
-# The information is stored in a directory located in ~/nxai_info and then zipped into a file named ~/nxai_info.zip.
+# The information is stored in a directory located in ~/nxai_info and then compressed into a file named ~/nxai_info.tgz.
 
 # Enable debug mode
-# set -x
+set -x
 
 # Create directory where the information will be stored
 info_dir=~/nxai_info
 rm -rf $info_dir >/dev/null 2>&1
-rm -rf $info_dir.zip >/dev/null 2>&1
+rm -rf $info_dir.tar.gz >/dev/null 2>&1
 mkdir -p $info_dir
 
 ############################### Basic System Information
@@ -117,13 +113,14 @@ curl -s -m 10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bi
     awk '{print "Runtime download speed: " $1/1048576 " MB/sec"}' \
         >>$info_dir/nxai_cloud_download_speed.txt
 
-############################### Zip the information
-zip -r $info_dir.zip $info_dir/* >/dev/null || echo "ERROR: Failed to zip the information."
+############################### tar compress the information
+cd $info_dir/..
+tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed to compress the information."
 
 echo "System information gathering complete."
-echo "The collected information is stored in $info_dir.zip"
+echo "The collected information is stored in $info_dir.tgz"
 ```
 
 </details>
 
-This will create a file called `nxai_info.zip` in the home directory. Attaching this file to your support question will make it much easier for us to help you.
+This will create a file called `nxai_info.tgz` in the home directory. Attaching this file to your support question will make it much easier for us to help you.
