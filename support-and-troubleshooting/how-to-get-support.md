@@ -26,7 +26,7 @@ Logs can be gathered by running the following shell script on the relevant machi
 # The information is stored in a directory located in ~/nxai_info and then compressed into a file named ~/nxai_info.tgz.
 
 # Enable debug mode
-set -x
+# set -x
 
 # Create directory where the information will be stored
 info_dir=~/nxai_info
