@@ -29,6 +29,7 @@ Logs can be gathered by running the following shell script on the relevant machi
 # set -x
 
 # Create directory where the information will be stored
+current_dir=$(pwd)
 info_dir=~/nxai_info
 rm -rf $info_dir >/dev/null 2>&1
 rm -rf $info_dir.tgz >/dev/null 2>&1
@@ -119,6 +120,7 @@ tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed
 
 echo "System information gathering complete."
 echo "The collected information is stored in $info_dir.tgz"
+cd "$current_dir"
 ```
 
 </details>
