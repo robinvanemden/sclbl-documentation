@@ -8,6 +8,10 @@ The NX AI Certification test should be able to run on any Ubuntu installation wh
 
 Ensure your device has at least a few gigabytes of free space, a working internet connection and a working Python 3 and Pip installation. Execute the following commands:
 
+{% hint style="info" %}
+Running the `python3 Utilities/install_acceleration_library.py` command will automatically detect the available hardware acceleration that is available on your device. If the script finds more than one option, it will pause execution and ask you to choose. If you want to execute these commands without pausing, add an the accelerator name to the command, such as the "Nx CPU" example below.
+{% endhint %}
+
 ```bash
 ## Create and enter folder for test
 mkdir nxai_test
@@ -24,10 +28,10 @@ pip3 install -r requirements.txt
 
 ## Install NX AI Manager
 ./Utilities/install_nxai_manager.sh
-#./Utilities/install_nxai_manager.sh cuda
-#./Utilities/install_nxai_manager.sh hailo4.17
-#./Utilities/install_nxai_manager.sh hailo4.18
-#./Utilities/install_nxai_manager.sh hailo4.19
+
+## Install acceleration runtime
+python3 Utilities/install_acceleration_library.py
+#python3 Utilities/install_acceleration_library.py "Nx CPU"
 
 ## Download required models
 python3 Utilities/download_models.py
