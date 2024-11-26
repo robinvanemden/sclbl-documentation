@@ -35,6 +35,10 @@ rm -rf $info_dir >/dev/null 2>&1
 rm -rf $info_dir.tgz >/dev/null 2>&1
 mkdir -p $info_dir
 
+# Redirect all output and error streams to a log file
+log_file="$info_dir/nxai_info.log"
+exec > >(tee -a "$log_file") 2>&1
+
 ############################### Basic System Information
 lsb_release -a >$info_dir/lsb_release.txt
 uname -a >$info_dir/uname.txt
@@ -65,8 +69,15 @@ else
     exit 2
 fi
 libnxai_plugin_dir=$plugins_dir/nxai_plugin/
-# Get list of files in the AI Plugin directory
-tree -h --du $libnxai_plugin_dir/ >$info_dir/nxai_plugin_tree.txt
+# Check if tree is installed
+if command -v tree >/dev/null 2>&1; then
+    echo "Using tree to list files in the AI Plugin directory"
+    tree -h --du "$libnxai_plugin_dir/" >"$info_dir/nxai_plugin_tree.txt"
+else
+    echo "Using du to list file sizes in the AI Plugin directory"
+    du -ah "$libnxai_plugin_dir/" >"$info_dir/nxai_plugin_du.txt"
+fi
+
 # Gather all log files in the AI Plugin directory
 find $libnxai_plugin_dir -name "*.log" -exec cp {} $info_dir/ \;
 find $libnxai_plugin_dir -name "*.log.*" -exec cp {} $info_dir/ \;
@@ -104,15 +115,29 @@ timeout 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
 # timeout --signal=SIGKILL 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
 
 ############################### Check connectivity to the Nx AI Cloud
-curl -s https://api.sclbl.nxvms.com/dev/ >$info_dir/nxai_cloud_connectivity.txt
-# Download a file from the Nx AI Cloud to measure the download speed
-echo "Downloading a test file from the Nx AI Cloud to measure download speed..."
-curl -s -m 10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -o /dev/null -w "%{speed_download}" |
-    awk '{print "Model download speed: " $1/1048576 " MB/sec"}' \
-        >$info_dir/nxai_cloud_download_speed.txt
-curl -s -m 10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -o /dev/null -w "%{speed_download}" |
-    awk '{print "Runtime download speed: " $1/1048576 " MB/sec"}' \
-        >>$info_dir/nxai_cloud_download_speed.txt
+# Check if curl or wget is available
+if command -v curl >/dev/null 2>&1; then
+    echo "Using curl"
+    # check if Nx AI Cloud is reachable
+    curl -s https://api.sclbl.nxvms.com/dev/ >$info_dir/nxai_cloud_connectivity.txt
+    # Download a file from the Nx AI Cloud to measure the download speed
+    echo "Downloading a test file from the Nx AI Cloud to measure download speed..."
+    curl -s -m 10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -o /dev/null -w "%{speed_download}" |
+        awk '{print "Model download speed: " $1/1048576 " MB/sec"}' \
+            >$info_dir/nxai_cloud_download_speed_1.txt
+    curl -s -m 10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -o /dev/null -w "%{speed_download}" |
+        awk '{print "Runtime download speed: " $1/1048576 " MB/sec"}' \
+            >$info_dir/nxai_cloud_download_speed_2.txt
+elif command -v wget >/dev/null 2>&1; then
+    echo "Using wget"
+    wget -q -O "$info_dir/nxai_cloud_connectivity.txt" https://api.sclbl.nxvms.com/dev/
+    wget --timeout=10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -O /dev/null >$info_dir/nxai_cloud_download_speed_1.txt 2>&1
+    wget --timeout=10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -O /dev/null >$info_dir/nxai_cloud_download_speed_2.txt 2>&1
+else
+    echo "ERROR: Neither curl nor wget is installed."
+fi
+
+wget -q -O "./nxai_cloud_connectivity.txt" https://api.sclbl.nxvms.com/dev/
 
 ############################### tar compress the information
 cd $info_dir/..
@@ -121,6 +146,7 @@ tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed
 echo "System information gathering complete."
 echo "The collected information is stored in $info_dir.tgz"
 cd "$current_dir"
+
 ```
 
 </details>
