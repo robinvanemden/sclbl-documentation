@@ -107,6 +107,7 @@ cp $bin_dir/../etc/settings.json $info_dir/settings.json
 ############################### Check if AI Manager is running
 # get running processes
 ps aux | grep sclbl >$info_dir/nxai_manager_ps_aux.txt
+ps aux | grep nxai >>$info_dir/nxai_manager_ps_aux.txt
 # start the ai manager manually and stop it after 5 seconds
 echo "Running AI Manager for 5 seconds..."
 cd $bin_dir
