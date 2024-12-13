@@ -1,15 +1,5 @@
 # Nx AI Manager plugin documentation
 
-{% hint style="info" %}
-Following [Scailable's acquisition by Network Optix](https://www.networkoptix.com/announcement/scailable), we've been diligently working towards the launch of version 4.1 of the AI Manager, which will coincide with the release of Nx Meta gen 6. This upgraded AI Manager will introduce exciting new features and significantly deeper integration with the Nx EVOS ecosystem.
-
-Consequently, our AI Manager documentation is undergoing rapid transformation to provide you with the most current and comprehensive information available. However, please note that the documentation may occasionally lag behind our fast-paced development towards the version 4/gen 6 release. Rest assured, we fully commit to delivering comprehensive documentation before the final release!
-{% endhint %}
-
-{% hint style="warning" %}
-Ensure you download Nx Meta version 6.0 or later to use the Nx AI Plugin.
-{% endhint %}
-
 The Nx AI Manager plugin is a tool that enables you to create and manage large-scale Edge AI solutions using [Network Optix Meta](https://meta.nxvms.com/) and the [Network Optix toolkit](https://www.networkoptix.com/developers/nx-toolkit). With this plugin, you can turn any compatible edge device, like a router, gateway, or IPC, into a "smart" device that can run advanced Artificial Intelligence (AI) and Machine Learning (ML) models on input data. Using AI and ML models, you can analyze a video stream and gain valuable insights, such as counting the number of cars passing by in the video stream.
 
 The documentation here offers detailed instructions on setting up and configuring your edge AI solutions on Linux-based Nx Meta-supported edge hardware.
