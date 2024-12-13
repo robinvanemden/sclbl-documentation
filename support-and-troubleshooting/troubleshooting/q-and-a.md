@@ -8,9 +8,25 @@ First make sure that the model actually has something to detect. For example if 
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F4Ho7de78I0gSMd4YY72l%2Fuploads%2FtfickTa2IFac8PNGeXPY%2Fimage.png?alt=media&#x26;token=4985cf72-ed7f-4b48-9612-2d565e3f873e" alt=""><figcaption></figcaption></figure>
 
-### The Nx AI Manager cannot be started <a href="#the-nx-ai-manager-cannot-be-started" id="the-nx-ai-manager-cannot-be-started"></a>
+### The Nx AI Runtime is having trouble starting <a href="#the-nx-ai-manager-cannot-be-started" id="the-nx-ai-manager-cannot-be-started"></a>
 
-If, after clicking Start, the following message appears:There could be a problem with your installation. Try manually installing the Nx AI Manager [7.1 NX AI Manager Manual Installation](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration/nx-ai-manager-manual-installation)​If there are no bounding boxes being displayed in the Nx Client, it could point to a problem with the runtime, or driver incompatibilities. It can also mean that the model is not picking up any useful data.
+#### No matching architecture found for model
+
+This message might appear if you have a model assigned that is not compatible with your current hardware or runtime. The NxAI WebUI should prevent you from assigning incompatible models, but it might still happen if devices were moved to different servers, or if the runtime on the server was changed.&#x20;
+
+This problem could be solved by assigning a different compatible model or reselecting the runtime.
+
+#### AI Manager failed to create listening socket
+
+The AI Manager tries to create a socket file on the filesystem to communicate with the Network Optix Mediaserver. It will try to create this file at the default location.
+
+If a file exists, or for whatever reason the AI Manager does not have permissions to write to the default location, this will fail.&#x20;
+
+Making this path available should solve the issue. On devices where this is not an option, the file location can be controlled through ini settings. See [7.5-enable-ini-settings.md](../../nx-ai-manager/7.-advanced-configuration/7.5-enable-ini-settings.md "mention")
+
+#### If all else fails
+
+If the message still appears, there could be a problem with your installation. Try manually installing the Nx AI Manager [7.1 NX AI Manager Manual Installation](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration/nx-ai-manager-manual-installation) .
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F4Ho7de78I0gSMd4YY72l%2Fuploads%2F2aceU4cO160rtVwxloDa%2Fruntime_status_nostart.png?alt=media&#x26;token=5db6d9e4-c393-40a6-92d2-102705e1aca0" alt=""><figcaption></figcaption></figure>
 
@@ -26,7 +42,7 @@ sudo journalctl -u networkoptix-metavms-mediaserver.service
 
 ### Is it possible to send output to a different endpoint? <a href="#is-it-possible-to-send-output-to-a-different-endpoint" id="is-it-possible-to-send-output-to-a-different-endpoint"></a>
 
-No this is not possible. It is possible to access the data and pass it through.TODO: show how to do that
+No this is not possible. It is possible to access the data and pass it through. See [7.1-external-post-processing.md](../../nx-ai-manager/7.-advanced-configuration/7.1-external-post-processing.md "mention")
 
 
 

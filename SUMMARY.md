@@ -16,6 +16,7 @@
   * [7.2 External Post-processing](nx-ai-manager/7.-advanced-configuration/7.1-external-post-processing.md)
   * [7.3 External Pre-processing](nx-ai-manager/7.-advanced-configuration/7.1-external-post-processing-1.md)
   * [7.4 Training Loop](nx-ai-manager/7.-advanced-configuration/7.4-training-loop.md)
+  * [7.5 Enable ini settings](nx-ai-manager/7.-advanced-configuration/7.5-enable-ini-settings.md)
 
 ## Nx AI Cloud
 
