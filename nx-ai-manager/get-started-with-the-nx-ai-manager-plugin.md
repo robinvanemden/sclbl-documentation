@@ -9,15 +9,14 @@ If you are getting error messages or not seeing any bounding boxes in your Nx Cl
 {% hint style="info" %}
 **Minimal hardware Requirements**\
 \
-_Dual-core Intel i5 quad core 10th gen equivalent X86\_64 CPU with at least 4GB of RAM_\
+&#xNAN;_&#x44;ual-core Intel i5 quad core 10th gen equivalent X86\_64 CPU with at least 4GB of RAM_\
 _Raspberry Pi 4b equivalent or higher AARCH64 CPU with at least 4GB of RAM_\
 
 
 **OS Requirements**\
-_Ubuntu Linux LTS version 20.04 or higher_\
+&#xNAN;_&#x55;buntu Linux LTS version 20.04 or higher_\
 \
 **Software Requirements**\
-_Nx AI Manager 4.1+                                     \[X86\_64, Arm32, Arm64]_\
 _Nx Meta Client 6.0+                                      \[X86\_64, Arm32, Arm64]_\
 _Nx Meta Server 6.0+                                      \[X86\_64, Arm32, Arm64]_
 {% endhint %}
