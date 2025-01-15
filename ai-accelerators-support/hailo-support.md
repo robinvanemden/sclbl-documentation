@@ -1,6 +1,6 @@
 # Hailo Support
 
-Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX format. Due to the nature and involvement in the compilation process, it's prohibitively complicated to automate this process on the cloud. Hence, we provide a workaround where the user compiles the model locally, then upload the compiled Hailo-ONNX file to the Nx AI Cloud.
+Deploying to Hailo chips requires the compilation of ONNX models to Hailo-ONNX format. And due to the nature and involvement in the compilation process, it's prohibitively complicated to automate this process on the cloud. Hence, we provide a workaround where the user compiles the model locally, then uploads the compiled Hailo-ONNX file to the Nx AI Cloud.
 
 ## Compiling an ONNX model
 
@@ -63,7 +63,7 @@ To  adapt these two scripts for any other ONNX model, make sure to check out the
 5. To manually verify that the Hailo runtime is downloaded and set up, feel free to check out the content of the `bin` folder of the AI Manager and make sure it contains these files:\
    \- libhailort.so.4.xx.0 (xx is the minor version of the library)\
    \- libonnxruntime\_providers\_hailo.so\
-   \-libonnxruntime\_providers\_shared.so\
+   -libonnxruntime\_providers\_shared.so\
    \- libRuntimeLibrary.so
 
 ```sh
@@ -77,7 +77,13 @@ installed_runtime.txt libhailort.so.4.17.0 libonnxruntime_providers_hailo.so lib
 
 If that is not the case, you'll need to manually compile the ONNX model and upload the generated model to the cloud as illustrated in the example above.
 
-### Monitoring
+## Limitations
+
+### Number of parallel models
+
+The Nx AI Manager offers the ability to operate multiple AI models at the same time. This flexibility allows you to efficiently manage resources and optimize the performance of your AI applications. However, it's important to consider the limitations of the hardware you're using. Specifically, each Hailo chip, whether it's the Hailo-8 or the Hailo-8L, is capable of running only one model at a given time. Therefore, the number of models you can run concurrently on a single machine directly corresponds to the number of Hailo chips installed in that machine. Failing to account for this limitation may lead to the AI Manager's failure.
+
+## Monitoring
 
 **How to Enable Hailo Monitoring with `hailortcli monitor`**
 
