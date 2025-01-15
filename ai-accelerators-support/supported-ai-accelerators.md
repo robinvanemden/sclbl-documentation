@@ -15,3 +15,4 @@ The following table contains a compiled list of supported runtimes:
 | Nvidia [Jetpack](https://developer.nvidia.com/embedded/jetpack-archive) | aarch64          | Jetpack 4.6, Jetpack 5.x, Jetpack 6.x |
 | Qualcomm (coming soon)                                                  | aarch64          | 2.20.x                                |
 | MemryX (coming soon)                                                    | aarch64          | 2.2.37                                |
+| DeepX (coming soon)                                                     | aarch64, x86\_64 | -                                     |
