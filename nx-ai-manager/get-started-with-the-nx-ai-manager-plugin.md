@@ -55,7 +55,7 @@ These numbers can serve as a reference point for estimating the system's perform
 
 When AI is enabled on one or multiple cameras of an Nx server, that server's CPU/GPU load and memory consumption will increase. This is because the Nx server needs to decode the camera streams for which AI is enabled, and the Nx AI Manager plugin requires resources to perform the AI inference.&#x20;
 
-The following recommendations assume that the device is dedicated to Nx with Nx AI Manager pluginwith default settings and that the AI plugin is enabled on 720p secondary camera streams.
+The following recommendations assume that the device is dedicated to Nx with Nx AI Manager plugin with default settings and that the AI plugin is enabled on 720p secondary camera streams.
 
 #### Memory requirement
 
@@ -73,40 +73,35 @@ For other hardware architectures such as ARM, Nvidia Jetson Orin, Hailo, etc, pl
 
 ## Get started with Network Optix and the Nx AI Manager plugin
 
-To get started with Nx and the Nx AI Manager plugin, follow the steps outlined below:&#x20;
+To get started with Nx and the Nx AI Manager plugin, follow the steps outlined below:
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/install-network-optix" %}
-[1. Install Network Optix](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/install-network-optix)
+{% content-ref url="1.-install-network-optix.md" %}
+[1.-install-network-optix.md](1.-install-network-optix.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/configure-the-nx-ai-manager-plugin" %}
-[3. Configure the Nx AI Manager plugin](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/configure-the-nx-ai-manager-plugin)
+{% content-ref url="2.-install-nx-ai-plugin.md" %}
+[2.-install-nx-ai-plugin.md](2.-install-nx-ai-plugin.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/other-network-optix-plugin-settings" %}
-[4. Other Network Optix Plugin Settings](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/other-network-optix-plugin-settings)
+{% content-ref url="2.-configure-the-nx-ai-manager-plugin.md" %}
+[2.-configure-the-nx-ai-manager-plugin.md](2.-configure-the-nx-ai-manager-plugin.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/manual-plugin-installation" %}
-[5. Manual Plugin Installation](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/manual-plugin-installation)
+{% content-ref url="3.-other-network-optix-plugin-settings.md" %}
+[3.-other-network-optix-plugin-settings.md](3.-other-network-optix-plugin-settings.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/support-and-troubleshooting/troubleshooting" %}
-[Troubleshooting](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/support-and-troubleshooting/troubleshooting)
+{% content-ref url="4.-manual-plugin-installation.md" %}
+[4.-manual-plugin-installation.md](4.-manual-plugin-installation.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/removing-the-nx-ai-manager" %}
-[6. Removing the Nx AI Manager](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/removing-the-nx-ai-manager)
+{% content-ref url="7.-advanced-configuration/" %}
+[7.-advanced-configuration](7.-advanced-configuration/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration" %}
-[7. Advanced configuration](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration)
+And because it's sometimes necessary:
+
+{% content-ref url="../support-and-troubleshooting/troubleshooting/" %}
+[troubleshooting](../support-and-troubleshooting/troubleshooting/)
 {% endcontent-ref %}
-
-{% content-ref url="https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration/external-post-processing" %}
-[7.2 External Post-processing](https://app.gitbook.com/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration/external-post-processing)
-{% endcontent-ref %}
-
-\
-
 
