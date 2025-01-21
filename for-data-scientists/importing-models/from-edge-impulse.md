@@ -60,17 +60,23 @@ You will arrive at the model upload page, from where you can [select "linking an
 
 ![](<../../.gitbook/assets/Screenshot from 2024-05-22 13-57-34.png>)
 
-At this point you can use your Edge Impulse API key and project ID to import your trained model directly from Edge Impulse. Your API key can be found at your dashboard, and the Project ID can be found in the URL:
+At this point you can use your Edge Impulse API key and project ID to import your trained model directly from Edge Impulse.
 
-![](<../../.gitbook/assets/Screen Shot 2023-02-06 at 15.21.41.png>)
+* Your Project ID is located on the project info page in a separate box, or as the last item in the URL:
+
+<figure><img src="../../.gitbook/assets/edge-impulse-project-info.png" alt="" width="375"><figcaption></figcaption></figure>
+
+* Your API key can be found at your dashboard:
+
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-02-06 at 15.21.41.png" alt="" width="375"><figcaption></figcaption></figure>
 
 After filling out the API- and project- keys you can click the "Link model" button, and your Edge Impulse model will be imported into your Nx AI library:
 
-![](<../../.gitbook/assets/Screenshot from 2024-05-22 14-26-41.png>)
+<figure><img src="../../.gitbook/assets/Screenshot from 2024-05-22 14-26-41.png" alt="" width="375"><figcaption></figcaption></figure>
 
 You can obviously change the model name and documentation (as usual), but effectively, after the import, the model is directly available for deployment. Once you click "Return to models" you will see the model on the top of you model list:
 
-![](<../../.gitbook/assets/Screenshot from 2024-05-22 14-28-47.png>)
+<figure><img src="../../.gitbook/assets/Screenshot from 2024-05-22 14-28-47.png" alt="" width="375"><figcaption></figcaption></figure>
 
 You are now ready to deploy your model to your selected edge device.
 
@@ -78,29 +84,17 @@ You are now ready to deploy your model to your selected edge device.
 
 In Nx Meta, connect to your system and open the plugin page.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-29 (1).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-29 (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 Click "Manage device" and select the model you created.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-58.png" alt="" width="314"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 13-26-58.png" alt="" width="314"><figcaption></figcaption></figure></div>
 
 And click on "Use this model" return to the plugin.
 
 The video feed should then show some detection boxes when you activate the object tab.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 15-04-04.png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../.gitbook/assets/Screenshot from 2024-07-12 15-04-04.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 That's it really; you have just trained and deployed a pretty nifty AI model to your edge device.
 

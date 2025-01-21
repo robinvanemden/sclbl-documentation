@@ -28,11 +28,19 @@ There might be a newer version of Nx Meta or Nx EVOS available. The new version 
 
 ### Try another model <a href="#try-another-model" id="try-another-model"></a>
 
-See if you can install another model and see if it gives correct resultsVerify that the model is [downloaded](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/\~/changes/836/support-and-troubleshooting/troubleshooting/plugin-checks#is-the-model-downloaded) and running.
+See if you can install another model and see if it gives correct resultsVerify that the model is [downloaded](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/~/changes/836/support-and-troubleshooting/troubleshooting/plugin-checks#is-the-model-downloaded) and running.
 
 ### Try another camera <a href="#try-another-camera" id="try-another-camera"></a>
 
-Check if the model works on another camera.If no other camera is available, you can point the camera at a different scene.
+Check if the model works on another camera. If no other camera is available, you can point the camera at a different scene.
+
+### Try to reset an unresponsive USB camera
+
+When you are using a USB webcam on ubuntu or another linux, those cameras can get lost in sleep mode and become unresponsive.
+
+You can unplug it and reconnect it to get the camera back, but that's kind of hard to do when you're remote.
+
+To remotely reset a USB camera you can login to the console of the machine where the camera is connected and use the command `usbreset` to get a list of the USB devices. Resetting a specific device can then be done with `usbreset 001/001` for example to reset a device that is located on that bus number.
 
 ### Try a test camera stream <a href="#try-a-test-camera-stream" id="try-a-test-camera-stream"></a>
 
