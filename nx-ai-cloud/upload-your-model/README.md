@@ -12,18 +12,7 @@ Drag and drop your ONNX model into the drag and drop area, choose a name for you
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2024-05-22 13-51-39.png" alt=""><figcaption></figcaption></figure>
 
-After the model is uploaded, a series of conversion blocks are ran to generate optimized model files for each supported target [AI accelerator](../../ai-accelerators-support/supported-ai-accelerators.md).
+After the model is uploaded, a series of conversions will be run to generate optimized model files for each supported target [AI accelerator](../../ai-accelerators-support/supported-ai-accelerators.md).
 
-A video from upload to model selection:
+When this is completed you will get an email and the model is [ready to be used](../use-your-model.md) on your devices.
 
-{% embed url="https://www.youtube.com/watch?v=DyNh9OrfdeU" %}
-
-Next, add a stream to one of the servers (for now, one camera per server):
-
-{% embed url="https://youtu.be/c2eTOTUdORM" %}
-
-Finally, assign your model to a camera:
-
-
-
-{% embed url="https://www.youtube.com/watch?v=dX4von9Any4" %}

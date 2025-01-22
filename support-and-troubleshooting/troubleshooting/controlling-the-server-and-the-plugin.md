@@ -50,9 +50,9 @@ sudo systemctl stop networkoptix-metavms-mediaserver.service
 
 To start the plugin the plugin needs to be enabled by toggling the switch next to the title and then also enabling the 'Device Active' toggle that will then appear.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is disabled for this device</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is disabled for this device</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled for this device, but the device is not active.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled for this device, but the device is not active.</p></figcaption></figure>
 
 ## Stopping the plugin
 
@@ -60,4 +60,4 @@ Stopping the plugin when it is running can be done from within the Nx Client.
 
 To stop the plugin all devices on a server need to be disabled by switching the 'Device Active' toggle to off.
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled and the device is active.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled and the device is active.</p></figcaption></figure>
