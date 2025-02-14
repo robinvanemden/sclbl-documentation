@@ -11,7 +11,7 @@ _"Edge Impulse is the leading development platform for machine learning on edge 
 In this section of our documentation we describe how to use the [Edge Impulse model training platform](https://edgeimpulse.com) to train advanced machine learning models for vision tasks and deploy them seamlessly using the [Nx AI cloud](broken-reference). To follow the documentation at this point we assume that you have access to the following:
 
 * An edge device with the Nx AI manager installed. If you do not have access to an edge device with the Nx AI manager installed please see how to purchase a device. Do make sure you can login to the edge device and navigate to the [AI manager installed on the device](broken-reference).
-* A camera that can be used as an input source. Please do see our [documentation regarding camera choice and setup](broken-reference) to get started.
+* A camera that can be used as an input source in Nx Meta as well as in stan-alone mode.
 * A Nx AI cloud account. You can register for a free trial account at [https://admin.sclbl.net/register](https://admin.sclbl.net/register). However, the Edge Impulse integration will need to be activated for your account by our support team; the quickest way to get that done is by reaching out [through our chat](https://scailable.net/chat/).
 * An Edge Impulse account. Sign up for a free Edge Impulse account at [https://studio.edgeimpulse.com/](https://studio.edgeimpulse.com/).
 

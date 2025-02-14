@@ -26,7 +26,7 @@ If the plugin is not available, check if the plugin is present (and what version
 
 * You need Nx Meta version 6.0 or newer.
 * The plugin version needs to be version 4.0 or higher. This document uses the plugin version 4.1 or higher.
-  * It could be the case that the plugin is not properly installed. Follow the instructions at [2.-install-nx-ai-plugin.md](../../nx-ai-manager/2.-install-nx-ai-plugin.md "mention"), and check that the plugin file is installed at:`/opt/networkoptix-metavms/mediaserver/bin/plugins/nxai_plugin/libnxai_plugin.so`
+  * It could be the case that the plugin is not properly installed. Follow the instructions at [2.-install-nx-ai-manager-plugin.md](../../nx-ai-manager/2.-install-nx-ai-manager-plugin.md "mention"), and check that the plugin file is installed at:`/opt/networkoptix-metavms/mediaserver/bin/plugins/nxai_plugin/libnxai_plugin.so`
   * If the plugin file is not there, or it exists but the server still cannot detect it, follow the instructions at [4.-manual-plugin-installation.md](../../nx-ai-manager/4.-manual-plugin-installation.md "mention")​
 
 ### Are the needed drivers installed <a href="#are-the-needed-drivers-installed" id="are-the-needed-drivers-installed"></a>
@@ -45,11 +45,11 @@ In order for the runtime using Hailo accelerators to work, the correct Hailo Run
 
 If the plugin is not running the Plugin tab will show a deactivated toggle for the device.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 You can enable the NX AI Runtime by clicking the Device active switch.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Check the command line
 
@@ -102,7 +102,7 @@ See if the model with the ID from the cloud is downloaded and has the correct si
 
 For example the **80-Classes Object Detector \[640x640]** model has the following model ID: `7b65bdda-39da-4259-b1bf-b0d1dbb7b162` on the model detail page:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Models are downloaded into `/opt/networkoptix-metavms/mediaserver/bin/plugins/nxai_plugin/nxai_manager/cache/` on the local file system.&#x20;
 

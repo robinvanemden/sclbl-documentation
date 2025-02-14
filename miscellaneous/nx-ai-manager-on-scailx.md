@@ -1,6 +1,6 @@
 # Nx AI Manager on SCAiLX
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ## Installing the Nx AI Manager
 

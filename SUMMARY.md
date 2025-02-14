@@ -1,18 +1,21 @@
 # Table of contents
 
-* [Nx AI Manager plugin documentation](README.md)
+* [Nx AI Manager plugin v4.3](README.md)
 
 ## Nx AI Manager
 
 * [Get started with the NX AI Manager plugin](nx-ai-manager/get-started-with-the-nx-ai-manager-plugin.md)
 * [1. Install Network Optix](nx-ai-manager/1.-install-network-optix.md)
-* [2. Install NX AI Plugin](nx-ai-manager/2.-install-nx-ai-plugin.md)
-* [3. Configure the Nx AI Manager plugin](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin.md)
+* [2. Install Nx AI Manager Plugin](nx-ai-manager/2.-install-nx-ai-manager-plugin.md)
+* [3. Configure the Nx AI Manager plugin](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin/README.md)
+  * [3.1 Model Settings](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin/model-settings.md)
+  * [3.2 Model pipeline selection and configuration](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin/model-pipeline-configuration.md)
+  * [3.3 Model pipelines on multiple devices](nx-ai-manager/2.-configure-the-nx-ai-manager-plugin/multiple-model-pipelines.md)
 * [4. Other Network Optix Plugin Settings](nx-ai-manager/3.-other-network-optix-plugin-settings.md)
 * [5. Manual Plugin Installation](nx-ai-manager/4.-manual-plugin-installation.md)
 * [6. Removing the Nx AI Manager](nx-ai-manager/6.-removing-the-nx-ai-manager.md)
 * [7. Advanced configuration](nx-ai-manager/7.-advanced-configuration/README.md)
-  * [7.1 NX AI Manager Manual Installation](nx-ai-manager/7.-advanced-configuration/7.1-nx-ai-manager-manual-installation.md)
+  * [7.1 Nx AI Manager Manual Installation](nx-ai-manager/7.-advanced-configuration/7.1-nx-ai-manager-manual-installation.md)
   * [7.2 External Post-processing](nx-ai-manager/7.-advanced-configuration/7.1-external-post-processing.md)
   * [7.3 External Pre-processing](nx-ai-manager/7.-advanced-configuration/7.1-external-post-processing-1.md)
   * [7.4 Training Loop](nx-ai-manager/7.-advanced-configuration/7.4-training-loop.md)
@@ -21,7 +24,7 @@
 ## Nx AI Cloud
 
 * [Introduction](nx-ai-cloud/introduction.md)
-* [Registration](nx-ai-cloud/registration.md)
+* [Registration and log-in](nx-ai-cloud/registration.md)
 * [Deployment and device management](nx-ai-cloud/deployment-and-device-management.md)
 * [Upload your model](nx-ai-cloud/upload-your-model/README.md)
   * [Normalization](nx-ai-cloud/upload-your-model/normalization.md)
@@ -65,9 +68,9 @@
 
 ## Miscellaneous
 
-* [NX AI Certification Test](miscellaneous/nx-ai-certification-test.md)
+* [Nx AI Certification Test](miscellaneous/nx-ai-certification-test.md)
 * [Nx AI Manager on SCAiLX](miscellaneous/nx-ai-manager-on-scailx.md)
 * [Privacy policy](miscellaneous/privacy-policy.md)
 * [Support](miscellaneous/support.md)
 * [End user license agreement](miscellaneous/end-user-license-agreement.md)
-* [NX cloud cookie statement](miscellaneous/nx-cloud-cookie-statement.md)
+* [Nx cloud cookie statement](miscellaneous/nx-cloud-cookie-statement.md)

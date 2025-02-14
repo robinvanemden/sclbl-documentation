@@ -21,7 +21,6 @@ To recap, the ONNX models that are supported must:
 * expect to operate on RGB/Grayscale images,
 * using only operators defined in this [list](https://onnx.ai/onnx/operators/),&#x20;
 * with versions up to 17.
-* ONNX IR version up to 9. You should version 1.15.0 (or older) of the Python onnx package
 
 ## Named IO specification
 

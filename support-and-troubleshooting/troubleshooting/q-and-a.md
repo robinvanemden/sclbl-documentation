@@ -26,7 +26,7 @@ Making this path available should solve the issue. On devices where this is not 
 
 #### If all else fails
 
-If the message still appears, there could be a problem with your installation. Try manually installing the Nx AI Manager [7.1 NX AI Manager Manual Installation](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/advanced-configuration/nx-ai-manager-manual-installation) .
+If the message still appears, there could be a problem with your installation. Try manually installing the Nx AI Manager [7.1 Nx AI Manager Manual Installation](../../nx-ai-manager/7.-advanced-configuration/7.1-nx-ai-manager-manual-installation.md) .
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F4Ho7de78I0gSMd4YY72l%2Fuploads%2F2aceU4cO160rtVwxloDa%2Fruntime_status_nostart.png?alt=media&#x26;token=5db6d9e4-c393-40a6-92d2-102705e1aca0" alt=""><figcaption></figcaption></figure>
 
@@ -56,7 +56,7 @@ In this case, to fix the issue where the plugin operates on the secondary stream
 
 <figure><img src="https://mail.google.com/mail/u/1?ui=2&#x26;ik=c0def2cba3&#x26;attid=0.2&#x26;permmsgid=msg-a:r-2168785569618819936&#x26;th=191792f7d5bbb8d8&#x26;view=fimg&#x26;fur=ip&#x26;sz=s0-l75-ft&#x26;attbid=ANGjdJ8lXNyzRSaNphCAACkVJjOUOVYmKzkcZC0DllLD045hD7Rn4RWByF8RtqAItqGTr1SzvXWU6FG6SUV4PMonq30IZ84HktwnnYqyEGIKIUgMbbAn_y0nHyT931s&#x26;disp=emb&#x26;realattid=ii_m050ir0f2" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
 ### How to install the nightly version?
 

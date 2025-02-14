@@ -32,13 +32,13 @@ After the model is uploaded the model is ready to be used on your devices. To us
 * A popup window with the NX AI Manager Client will open on the device details page.
 * On this page you can switch the model by clicking the switch model button <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">.
 
-<figure><img src="../.gitbook/assets/3 device model details.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot From 2025-01-24 14-39-12 (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 * You can then browse through the model library and select the uploaded model. (In this example a face locator model is used).
 
-<figure><img src="../.gitbook/assets/4 model selection.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot From 2025-01-24 14-58-34.png" alt=""><figcaption></figcaption></figure>
 
 * The model will then be assigned and automatically downloaded to the server with the device.
 

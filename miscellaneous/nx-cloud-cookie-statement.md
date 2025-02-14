@@ -1,8 +1,8 @@
-# NX cloud cookie statement
+# Nx cloud cookie statement
 
 ## 1. The use of cookies
 
-sclbl.net uses cookies. A cookie is a small file that is sent along with pages from this website and / or Flash applications and stored by your browser on the hard drive of your computer, mobile phone, smartwatch or tablet. The information stored therein can be sent back to our servers on a subsequent visit.
+sclbl.nxvms.com uses cookies. A cookie is a small file that is sent along with pages from this website and / or Flash applications and stored by your browser on the hard drive of your computer, mobile phone, smartwatch or tablet. The information stored therein can be sent back to our servers on a subsequent visit.
 
 The use of cookies is of great importance for the smooth running of our website, but also cookies of which you do not immediately see the effect are very important. Thanks to the (anonymous) input from visitors, we can improve the use of the website and make it more user-friendly.
 
@@ -39,7 +39,7 @@ How you can adjust your settings differs per browser. Please refer to the help f
 
 ## 6. New developments and unforeseen cookies
 
-The texts of our website can be adjusted at any time due to continuous developments. This also applies to our cookie statement. Therefore, please read this statement regularly to stay informed of any changes. In blog articles, use can be made of content that is hosted on other sites and made accessible by sclbl.net by means of certain codes (embedded content), as with YouTube videos for example. These codes often use cookies. However, we have no control over what these third parties do with their cookies.
+The texts of our website can be adjusted at any time due to continuous developments. This also applies to our cookie statement. Therefore, please read this statement regularly to stay informed of any changes. In blog articles, use can be made of content that is hosted on other sites and made accessible by sclbl.nxvms.com by means of certain codes (embedded content), as with YouTube videos for example. These codes often use cookies. However, we have no control over what these third parties do with their cookies.
 
 It is also possible that cookies are placed via our websites by others, of which we are not always aware. Do you encounter unforeseen cookies on our website that you cannot find in our overview? Please contact info@networkoptix.com. You can also contact the third party directly and ask which cookies they placed, what the reason is, what the lifespan of the cookie is and how they have guaranteed your privacy.
 
@@ -49,7 +49,7 @@ We will have to adjust these statements from time to time, for example when we a
 
 If you have any questions or comments, please contact info@networkoptix.com
 
-27 February 2024
+January 27, 2025
 
 &#x20;
 

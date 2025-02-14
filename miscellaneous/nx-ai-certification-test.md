@@ -1,4 +1,4 @@
-# NX AI Certification Test
+# Nx AI Certification Test
 
 ## Certification Test
 

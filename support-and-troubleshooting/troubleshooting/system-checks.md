@@ -16,7 +16,7 @@ Can you store data or is the system low on resources. If the system has no space
 
 ### Is the camera working <a href="#is-the-camera-working" id="is-the-camera-working"></a>
 
-Do you see images in the camera preview window?If not, check the camera control app that came with the camera if that does show images.
+Do you see images in the camera preview window? If not, check the camera control app that came with the camera if that does show images.
 
 * If the camera is not working there, you need to fix the camera input first before trying any next steps.
 * If the camera is working but not visible in Nx Meta, please try to fix the camera display in Nx Meta first before trying any next steps.

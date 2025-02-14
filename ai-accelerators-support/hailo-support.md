@@ -51,7 +51,7 @@ To  adapt these two scripts for any other ONNX model, make sure to check out the
 ## Deploying on a machine with Hailo-8 or Hailo-8L chips
 
 1. The first step is to verify that you have a compatible HailoRT driver installed. Please check out this [table](supported-ai-accelerators.md) to determine if your driver version is supported.
-2. Next, install the Nx AI plugin by following [these instructions](../nx-ai-manager/2.-install-nx-ai-plugin.md).
+2. Next, install the Nx AI plugin by following [these instructions](../nx-ai-manager/2.-install-nx-ai-manager-plugin.md).
 3. If all is well, you should be able to select the Hailo runtime when enabling the Nx plugin as shown below:
 
 ![](../.gitbook/assets/hailo-runtime-in-plugin-ui.png)
@@ -146,7 +146,7 @@ To monitor Hailo usage with the `hailortcli monitor` command, you need to set a 
    &#x20;\
    `HAILO_MONITOR=1 hailortcli monitor`
 
-<figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 ## PCIe descriptor page size error
 

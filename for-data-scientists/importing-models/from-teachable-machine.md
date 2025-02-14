@@ -2,7 +2,7 @@
 
 ## About Teachable Machine
 
-![](../../.gitbook/assets/0f04f0b2-a39a-4621-8bb5-1f5f7bf9bf10\_mq.jpg.png)
+![](../../.gitbook/assets/0f04f0b2-a39a-4621-8bb5-1f5f7bf9bf10_mq.jpg.png)
 
 [Teachable Machine](https://teachablemachine.withgoogle.com) is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone.
 

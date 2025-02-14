@@ -32,7 +32,7 @@ sudo systemctl restart networkoptix-metavms-mediaserver.service
 
 But it can also be done on the built-in NX Meta Server web interface by accessing the webpage at port `:7001` for instance, at `https://localhost:7001/` or use the IP address for localhost `https://127.0.0.1:7001/`  or use your external IP address with the same port.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 
 ## Stopping the server
 
@@ -50,9 +50,9 @@ sudo systemctl stop networkoptix-metavms-mediaserver.service
 
 To start the plugin the plugin needs to be enabled by toggling the switch next to the title and then also enabling the 'Device Active' toggle that will then appear.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is disabled for this device</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is disabled for this device</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled for this device, but the device is not active.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption><p>The popup window showing that the plugin is enabled for this device, but the device is not active.</p></figcaption></figure>
 
 ## Stopping the plugin
 

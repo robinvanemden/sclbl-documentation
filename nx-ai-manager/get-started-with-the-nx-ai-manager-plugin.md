@@ -1,7 +1,7 @@
 # Get started with the NX AI Manager plugin
 
 {% hint style="info" %}
-If you are getting error messages or not seeing any bounding boxes in your Nx Client, check out the [troubleshooting](../support-and-troubleshooting/how-to-get-support.md) page.
+If you are getting error messages or not seeing any bounding boxes in your Nx Client, check out the [troubleshooting](../support-and-troubleshooting/troubleshooting/) or the [how to get support](../support-and-troubleshooting/how-to-get-support.md) page.
 {% endhint %}
 
 ## Requirements
@@ -75,33 +75,33 @@ For other hardware architectures such as ARM, Nvidia Jetson Orin, Hailo, etc, pl
 
 To get started with Nx and the Nx AI Manager plugin, follow the steps outlined below:
 
-{% content-ref url="1.-install-network-optix.md" %}
-[1.-install-network-optix.md](1.-install-network-optix.md)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/1.-install-network-optix" %}
+[1. Install Network Optix](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/1.-install-network-optix)
 {% endcontent-ref %}
 
-{% content-ref url="2.-install-nx-ai-plugin.md" %}
-[2.-install-nx-ai-plugin.md](2.-install-nx-ai-plugin.md)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-install-nx-ai-plugin" %}
+[2. Install NX AI Plugin](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-install-nx-ai-plugin)
 {% endcontent-ref %}
 
-{% content-ref url="2.-configure-the-nx-ai-manager-plugin.md" %}
-[2.-configure-the-nx-ai-manager-plugin.md](2.-configure-the-nx-ai-manager-plugin.md)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-configure-the-nx-ai-manager-plugin" %}
+[3. Configure the Nx AI Manager plugin](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-configure-the-nx-ai-manager-plugin)
 {% endcontent-ref %}
 
-{% content-ref url="3.-other-network-optix-plugin-settings.md" %}
-[3.-other-network-optix-plugin-settings.md](3.-other-network-optix-plugin-settings.md)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/3.-other-network-optix-plugin-settings" %}
+[4. Other Network Optix Plugin Settings](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/3.-other-network-optix-plugin-settings)
 {% endcontent-ref %}
 
-{% content-ref url="4.-manual-plugin-installation.md" %}
-[4.-manual-plugin-installation.md](4.-manual-plugin-installation.md)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/4.-manual-plugin-installation" %}
+[5. Manual Plugin Installation](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/4.-manual-plugin-installation)
 {% endcontent-ref %}
 
-{% content-ref url="7.-advanced-configuration/" %}
-[7.-advanced-configuration](7.-advanced-configuration/)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/7.-advanced-configuration" %}
+[7. Advanced configuration](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/7.-advanced-configuration)
 {% endcontent-ref %}
 
 And because it's sometimes necessary:
 
-{% content-ref url="../support-and-troubleshooting/troubleshooting/" %}
-[troubleshooting](../support-and-troubleshooting/troubleshooting/)
+{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/support-and-troubleshooting/troubleshooting" %}
+[Troubleshooting](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/support-and-troubleshooting/troubleshooting)
 {% endcontent-ref %}
 
