@@ -4,6 +4,32 @@ In the previous sections, we have explained how to create ONNX graphs from scrat
 
 This page offers a comprehensive specification of an ONNX model needed to benefit from all the built-in functionalities in the Nx AI Manager.
 
+## ONNX version **1.15.0**
+
+To meet the compatibility requirements for Nx AI Manager XPU runtimes, we advise using or exporting only ONNX versions up to 1.15.0. This version is solely compatible with Python 3.11.
+
+We refresh our runtimes at least every six months, so feel free to check back periodically for updates on the latest ONNX version support.
+
+To install ONNX 1.15.0 for Python 3.11, you can use the following pip command:
+
+```bash
+pip install onnx==1.15.0
+```
+
+For inference purposes, ONNX models are typically executed using the ONNX Runtime. The ONNX Runtime version 1.17.0 supports ONNX opset version 20 and is compatible with Python 3.11. To install the ONNX Runtime for CPU execution, use:
+
+```bash
+pip install onnxruntime==1.17.0
+```
+
+If you require GPU support, you can install the GPU version of ONNX Runtime:
+
+```bash
+pip install onnxruntime-gpu==1.17.0
+```
+
+Always ensure your development environment aligns with the above versions to maintain compatibility with your Nx AI Manager XPU runtimes.
+
 ## Requirements for the ONNX graph
 
 An ONNX graph/model is an abstract representation of computational graphs that uses nodes to describe operators, such as matrix multiplication, convolutions, and addition.&#x20;
