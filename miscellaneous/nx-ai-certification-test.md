@@ -103,25 +103,32 @@ Finally, the test will gather all results in a folder which can be used to gener
 
 A useful script is provided to install the Nx AI Manager runtime locally within the test environment. This will ensure that this testing does not interfere with any existing installations on the device.&#x20;
 
-The script also allows for installing different acceleration libraries by giving command line arguments. For CPU acceleration:
-
 ```bash
 ./Utilities/install_nxai_manager.sh
 ```
 
-For NVIDIA Cuda acceleration:
+### Installing Nx Acceleration Library
 
-```bash
-./Utilities/install_nxai_manager.sh ONNX-CUDA
+Acceleration libraries act as layers between the Nx AI Manager and your acceleration hardware. Any device should be able to run the tests on CPU, without acceleration hardware. However if your device has AI acceleration hardware, such as an Nvidia Cuda device, or a Hailo AI chip, these can be used to accelerate the AI pipeline.
+
+Running this script will automatically detect available hardware. If more than one is found, the script will present a list of options which you can choose from.
+
+```
+python3 Utilities/install_acceleration_library.py
 ```
 
-For Hailo acceleration:
+### Download Models
 
-```bash
-./Utilities/install_nxai_manager.sh hailo
+The Certification Test will test a variety of models to see if they can run on your device and libraries. After installing the acceleration library the correct models for your device can be downloaded.
+
+{% hint style="warning" %}
+This step could use a lot of data as many large files need to be downloaded. This might also take a long time depending on network conditions.
+{% endhint %}
+
 ```
-
-It is also possible to install multiple runtimes and have the Nx AI Certification test performed on all installed runtimes. This can be done by running the installation script for each runtime you would like to test.
+## Download required models
+python3 Utilities/download_models.py
+```
 
 ### Running test
 
@@ -133,6 +140,15 @@ python3 all_suites.py
 
 This could take many hours to complete.
 
+### Gathering Hardware Information
+
+This command will detect some hardware information about your device and package it with the test results. This will gives context to the test results and allows for better analysis about the device's performance.
+
+```
+## Gather info
+python3 Utilities/gather_hwinfo.py
+```
+
 ### Uploading Results
 
 An endpoint was created where you can upload and view the test results of your device. After the test has completed, run the following to automatically upload the script to the cloud:
@@ -140,24 +156,6 @@ An endpoint was created where you can upload and view the test results of your d
 ```bash
 python3 Utilities/upload_results.py
 ```
-
-### Generating Report
-
-A script is provided which can be used to generate a report. To generate the report, additional dependencies must be installed. These can be installed with:
-
-```sh
-pip3 install -r requirements_report.txt
-```
-
-Finally the report can be generated with:
-
-```bash
-python3 Utilities/generate_report.py
-```
-
-This will create a `Report` folder containing a file called `report.md`, which is the generated report in Markdown format.
-
-If the dependencies cannot be installed on the target device or there are space limitations, the `Results` folder can be distributed to another device where the report can be generated instead.
 
 ## Custom Model Benchmark
 
