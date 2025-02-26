@@ -4,14 +4,25 @@
 
 ### Quickstart
 
-The NX AI Certification test should be able to run on any Ubuntu installation which is also compatible with Network Optix Server.&#x20;
+The Nx AI Certification test should be able to run on any Ubuntu installation which is also compatible with Network Optix Server.&#x20;
 
-Ensure your device has at least a few gigabytes of free space, a working internet connection and a working Python 3 and Pip installation. Execute the following commands:
+Ensure your device has at least a few gigabytes of free space, a working internet connection and a working Python 3 and Pip installation.
 
-{% hint style="info" %}
-Running the `python3 Utilities/install_acceleration_library.py` command will automatically detect the available hardware acceleration that is available on your device. If the script finds more than one option, it will pause execution and ask you to choose. If you want to execute these commands without pausing, add an the accelerator name to the command, such as the "Nx CPU" example below.
+{% code title="Python requirements" %}
+```bash
+# on some systems you may need to install pip
+# for example with the following command on ubuntu
+sudo apt install python3-pip
+```
+{% endcode %}
+
+{% hint style="warning" %}
+If you are testing a GPU or NPU, also make sure that the required drivers are installed, for example the Jetpack drivers for NVIDIA accelerators.
 {% endhint %}
 
+Execute the following commands:
+
+{% code title="Download tests" %}
 ```bash
 ## Create and enter folder for test
 mkdir nxai_test
@@ -22,7 +33,20 @@ wget https://artifactory.nxvms.dev/artifactory/nxai_open/NXAITest/nxai_test.tgz
 
 ## Unpack testing suite
 tar -xvf nxai_test.tgz
+```
+{% endcode %}
 
+{% code title="Ubuntu quirk" %}
+```bash
+# on newer ubuntu systems you need to activate a python venv
+sudo apt install python3 venv
+python3 -m venv ./ # create venv in current dir
+source ./bin/activate # activate python venv in current dir
+```
+{% endcode %}
+
+{% code title="Install acceleration library" %}
+```bash
 ## Install all required Python packages
 pip3 install -r requirements.txt
 
@@ -32,10 +56,26 @@ pip3 install -r requirements.txt
 ## Install acceleration runtime
 python3 Utilities/install_acceleration_library.py
 #python3 Utilities/install_acceleration_library.py "Nx CPU"
+```
+{% endcode %}
 
+{% hint style="info" %}
+Running the `python3 Utilities/install_acceleration_library.py` command will automatically detect the available hardware acceleration that is available on your device. If the script finds more than one option, it will pause execution and ask you to choose. If you want to execute these commands without pausing, add an the accelerator name to the command, such as the "Nx CPU" example.
+{% endhint %}
+
+{% code title="Download models" %}
+```bash
 ## Download required models
 python3 Utilities/download_models.py
+```
+{% endcode %}
 
+{% hint style="warning" %}
+The `download_models.py` command will download approximately 3.5GB of model data, depending on your connection this may take a while.
+{% endhint %}
+
+{% code title="Run tests" %}
+```bash
 ## Start test
 python3 all_suites.py
 
@@ -45,8 +85,11 @@ python3 Utilities/gather_hwinfo.py
 ## Upload results to cloud
 python3 Utilities/upload_results.py
 ```
+{% endcode %}
 
+{% hint style="warning" %}
 The test will run for a couple of hours and will stress the device. Do not power off your device.
+{% endhint %}
 
 ### Introduction
 
@@ -56,35 +99,35 @@ The test will attempt to run multiple common model architectures, with different
 
 Finally, the test will gather all results in a folder which can be used to generate a report, either on the device or somewhere else. The report should contain enough information to determine if the device is indeed compatible.
 
-### Installing NxAI Manager
+### Installing Nx AI Manager
 
-A useful script is provided to install the NX AI Manager runtime locally within the test environment. This will ensure that this testing does not interfere with any existing installations on the device.&#x20;
+A useful script is provided to install the Nx AI Manager runtime locally within the test environment. This will ensure that this testing does not interfere with any existing installations on the device.&#x20;
 
 The script also allows for installing different acceleration libraries by giving command line arguments. For CPU acceleration:
 
-```
+```bash
 ./Utilities/install_nxai_manager.sh
 ```
 
-For Nvidia Cuda acceleration:
+For NVIDIA Cuda acceleration:
 
-```
-./Utilities/install_nxai_manager.sh cuda
+```bash
+./Utilities/install_nxai_manager.sh ONNX-CUDA
 ```
 
 For Hailo acceleration:
 
-```
+```bash
 ./Utilities/install_nxai_manager.sh hailo
 ```
 
-It is also possible to install multiple runtimes and have the NxAI Certification test performed on all installed runtimes. This can be done by running the installation script for each runtime you would like to test.
+It is also possible to install multiple runtimes and have the Nx AI Certification test performed on all installed runtimes. This can be done by running the installation script for each runtime you would like to test.
 
 ### Running test
 
-The NxAI Certification test includes a collection of tests to test different aspects of your device to ensure that the NxAI Toolkit can run on your device. To run all of these tests in one large test, run:
+The Nx AI Certification test includes a collection of tests to test different aspects of your device to ensure that the Nx AI Toolkit can run on your device. To run all of these tests in one large test, run:
 
-```
+```bash
 python3 all_suites.py
 ```
 
@@ -94,7 +137,7 @@ This could take many hours to complete.
 
 An endpoint was created where you can upload and view the test results of your device. After the test has completed, run the following to automatically upload the script to the cloud:
 
-```
+```bash
 python3 Utilities/upload_results.py
 ```
 
@@ -112,18 +155,19 @@ Finally the report can be generated with:
 python3 Utilities/generate_report.py
 ```
 
-This will create a "Report" folder containing a file called 'report.md', which is the generated report in Markdown format.
+This will create a `Report` folder containing a file called `report.md`, which is the generated report in Markdown format.
 
-If the dependencies cannot be installed on the target device or there are space limitations, the "Results" folder can be distributed to another device where the report can be generated instead.
+If the dependencies cannot be installed on the target device or there are space limitations, the `Results` folder can be distributed to another device where the report can be generated instead.
 
 ## Custom Model Benchmark
 
 {% hint style="info" %}
-The Custom Model Benchmark can only be used to benchmark models which have been uploaded to the NxAI Cloud.
+The Custom Model Benchmark can only be used to benchmark models which have been uploaded to the Nx AI Cloud.
 {% endhint %}
 
 The test allows you to benchmark your own models on different devices. The Certification Test includes the functionality to add your own models to its benchmark test. If you already have that downloaded, you can skip downloading and extracting the benchmark test. If you are only interested in benchmarking a model, you can instead download the smaller benchmark package:
 
+{% code title="Download benchmark" %}
 ```sh
 ## Create and enter folder for test
 mkdir nxai_benchmark
@@ -135,30 +179,31 @@ wget https://artifactory.nxvms.dev/artifactory/nxai_open/NXAITest/nxai_benchmark
 ## Unpack testing suite
 tar -xvf nxai_benchmark.tgz
 ```
+{% endcode %}
 
-Install an NxAI Manager with runtime by following the steps at [#installing-nxai-manager](nx-ai-certification-test.md#installing-nxai-manager "mention")
+Install an Nx AI Manager with runtime by following the steps at [#installing-nx-ai-manager](nx-ai-certification-test.md#installing-nx-ai-manager "mention")
 
 Next, add as many models as you want to benchmark by running:
 
-```
+```bash
 python3 Utilities/add_benchmark_model.py <Model ID>
 ```
 
 And entering the ID of the model you want to test. The ID of your model can be found by navigating to your model in the [model cloud](https://admin.sclbl.nxvms.com/models). For example:
 
-```
+```bash
 python3 Utilities/add_benchmark_model.py 4c5527f3-242a-4e17-b2e3-727dd6740f7c
 ```
 
 After you have successfully added all the models you want to benchmark, you can download the model files from the cloud by running:
 
-```
+```bash
 python3 Utilities/download_models.py
 ```
 
 Once all your models have been downloaded, start the benchmark by running:
 
-```
+```bash
 python3 Benchmark-Suite/run_suite.py
 ```
 
@@ -170,7 +215,7 @@ If the device is working well, but the test is not passing, feel free to contact
 
 Make sure you're in the root folder of the test suite and run the following command to gather all the log files:
 
-```shellscript
+```bash
 find ./ -type f \( -name "*.log" -o -name "failed_output.json" \) -printf '%P\n' | xargs tar -czf test_logs.tgz Results/
 ```
 
