@@ -15,6 +15,12 @@ In this section of our documentation we describe how to use the [Edge Impulse mo
 * A Nx AI cloud account. You can register for a free trial account at [https://admin.sclbl.net/register](https://admin.sclbl.net/register). However, the Edge Impulse integration will need to be activated for your account by our support team; the quickest way to get that done is by reaching out [through our chat](https://scailable.net/chat/).
 * An Edge Impulse account. Sign up for a free Edge Impulse account at [https://studio.edgeimpulse.com/](https://studio.edgeimpulse.com/).
 
+{% hint style="success" %}
+Due to policy changes, Edge Impulse has removed the built-in YOLOv5 block. Your model will still work, but to train a new model, you'll need to re-upload the YOLOv5 block on Edge Impulse platform. This takes just 5-10 minutes, and you can follow the instructions [here](https://github.com/edgeimpulse/yolov5).
+
+Let us know if you need any assistance!&#x20;
+{% endhint %}
+
 Once you have all of the above setup, you should be able to proceed to train your own model using edge impulse and deploy it using Nx AI Manager.&#x20;
 
 ## Quick overview
