@@ -12,6 +12,7 @@ Ensure your device has at least a few gigabytes of free space, a working interne
 ```bash
 # on some systems you may need to install pip
 # for example with the following command on ubuntu
+sudo apt update
 sudo apt install python3-pip
 ```
 {% endcode %}
@@ -39,7 +40,7 @@ tar -xvf nxai_test.tgz
 {% code title="Ubuntu quirk" %}
 ```bash
 # on newer ubuntu systems you need to activate a python venv
-sudo apt install python3 venv
+sudo apt install python3-venv
 python3 -m venv ./ # create venv in current dir
 source ./bin/activate # activate python venv in current dir
 ```
