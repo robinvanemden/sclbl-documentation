@@ -42,6 +42,10 @@
   * [Controlling the server and the plugin](support-and-troubleshooting/troubleshooting/controlling-the-server-and-the-plugin.md)
   * [Q\&A](support-and-troubleshooting/troubleshooting/q-and-a.md)
 
+## Videos
+
+* [Howto videos](videos/howto-videos.md)
+
 ## AI Accelerators Support
 
 * [Introduction](ai-accelerators-support/introduction-to-oaxs.md)
