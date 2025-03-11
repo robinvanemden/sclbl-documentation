@@ -2,7 +2,20 @@
 
 To use OpenVino runtimes, you have the option select it on plugin install for compatible hardware.\
 \
-If you want to preselect GPU or NPU runtimes, add `Environment="DEVICE_TYPE=GPU" vs Environment="DEVICE_TYPE=NPU"` to `/etc/systemd/system/networkoptix-metavms-mediaserver.service` under `[Service]:`
+If you want to preselect GPU or NPU runtimes, make sure you have the very latest Intel drivers and  libtbb installed on your machine.\
+\
+For the Intel drivers, follow:\
+\
+\-  For GPU: [https://github.com/intel/compute-runtime/releases](https://github.com/intel/compute-runtime/releases) \
+\-  For NPU: [https://github.com/intel/linux-npu-driver/releases](https://github.com/intel/linux-npu-driver/releases)
+
+Also make sure you have the latest libtbb installed:
+
+```
+sudo apt update sudo apt install libtbb12
+```
+
+Then,  add `Environment="DEVICE_TYPE=GPU" vs Environment="DEVICE_TYPE=NPU"` to `/etc/systemd/system/networkoptix-metavms-mediaserver.service` under `[Service]:`
 
 ```
 # Network Optix Media Server
