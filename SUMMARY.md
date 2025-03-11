@@ -51,6 +51,7 @@
 * [Introduction](ai-accelerators-support/introduction-to-oaxs.md)
 * [Supported AI accelerators](ai-accelerators-support/supported-ai-accelerators.md)
 * [Nvidia Support](ai-accelerators-support/nvidia-support.md)
+* [OpenVino Support](ai-accelerators-support/openvino-support.md)
 * [Hailo Support](ai-accelerators-support/hailo-support.md)
 
 ## For Data Scientists
