@@ -15,6 +15,16 @@ Also make sure you have the latest libtbb installed:
 sudo apt update sudo apt install libtbb12
 ```
 
+Add the user to video and gender groups:
+
+```
+sudo usermod -aG video $USER
+
+sudo usermod -aG render $USER
+```
+
+\
+\
 Then,  add `Environment="DEVICE_TYPE=GPU" vs Environment="DEVICE_TYPE=NPU"` to `/etc/systemd/system/networkoptix-metavms-mediaserver.service` under `[Service]:`
 
 ```
