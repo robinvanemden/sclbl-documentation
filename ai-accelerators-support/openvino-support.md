@@ -7,7 +7,7 @@ If you want to preselect GPU or NPU runtimes, make sure you have the very latest
 For the Intel drivers, follow:\
 \
 \-  For GPU:[ ](https://github.com/intel/compute-runtime/releases/tag/25.09.32961.5)[https://github.com/intel/compute-runtime/releases/tag/25.09.32961.5](https://github.com/intel/compute-runtime/releases/tag/25.09.32961.5)\
-\-  For NPU: [https://github.com/intel/linux-npu-driver/releases](https://github.com/intel/linux-npu-driver/releases)
+\-  For NPU: [https://github.com/intel/linux-npu-driver/releases/tag/v1.16.0](https://github.com/intel/linux-npu-driver/releases/tag/v1.16.0)
 
 Also make sure you have the latest libtbb installed:
 
