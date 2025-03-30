@@ -12,7 +12,7 @@ For the Intel drivers, follow:\
 Also make sure you have the latest libtbb installed:
 
 ```
-sudo apt update sudo apt install libtbb12
+sudo apt install libtbb12
 ```
 
 Add the user to video and gender groups:
