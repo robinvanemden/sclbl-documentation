@@ -79,14 +79,20 @@ The `download_models.py` command will download approximately 3.5GB of model data
 ```bash
 ## Start test
 python3 all_suites.py
+```
+{% endcode %}
 
+{% code title="Gather info and print ID" %}
+```
 ## Gather info
 python3 Utilities/gather_hwinfo.py
+```
+{% endcode %}
 
+```
 ## Upload results to cloud
 python3 Utilities/upload_results.py
 ```
-{% endcode %}
 
 {% hint style="warning" %}
 The test will run for a couple of hours and will stress the device. Do not power off your device.
@@ -149,6 +155,8 @@ This command will detect some hardware information about your device and package
 ## Gather info
 python3 Utilities/gather_hwinfo.py
 ```
+
+This command will clearly print the ID of your device. This ID can then later be used to identify your device when the test results are uploaded. This command can be run again at any time if you need the ID again.
 
 ### Uploading Results
 
