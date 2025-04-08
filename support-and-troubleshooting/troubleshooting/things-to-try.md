@@ -16,19 +16,19 @@ For the plugin to be detected after install, make sure to restart the Nx Meta me
 
 ### Reinstall the plugin <a href="#reinstall-the-plugin" id="reinstall-the-plugin"></a>
 
-Firstly completely remove the existing version of the plugin by following [the uninstall instructions](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/removing-the-nx-ai-manager).And then follow the [install instructions](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/install-nx-ai-manager-plugin) for a clean installation the plugin.
+Firstly completely remove the existing version of the plugin by following the [uninstall instructions](../../nx-ai-manager/6.-removing-the-nx-ai-manager.md). And then follow the [install instructions](../../nx-ai-manager/2.-install-nx-ai-manager-plugin.md) for a clean installation the plugin.
 
 ### Try another version <a href="#try-another-version" id="try-another-version"></a>
 
 There might be a newer version of Nx Meta or Nx EVOS available. The new version might have improved functionality. Download the [new version](https://meta.nxvms.com/download/releases) and install it to see if your problems are solved.Check if the latest beta fixes your problem, or if it worked in a previous release.
 
-* Nx AI Manager plugin - see the [install instructions](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/nx-ai-manager/install-nx-ai-manager-plugin).
+* Nx AI Manager plugin - see the [install instructions](../../nx-ai-manager/2.-install-nx-ai-manager-plugin.md).
 * Nx Meta Mediaserver - check if there is a [newer version or a beta](https://meta.nxvms.com/download/releases) available.
 * Nx Meta client - check if there is a [newer version or a beta](https://meta.nxvms.com/download/releases) available.
 
 ### Try another model <a href="#try-another-model" id="try-another-model"></a>
 
-See if you can install another model and see if it gives correct resultsVerify that the model is [downloaded](https://app.gitbook.com/o/bcLqIPiXVKcQXjqrnQSu/s/4Ho7de78I0gSMd4YY72l/~/changes/836/support-and-troubleshooting/troubleshooting/plugin-checks#is-the-model-downloaded) and running.
+See if you can install another model and see if it gives correct results. Verify that the model is [downloaded](plugin-checks.md) and running.
 
 ### Try another camera <a href="#try-another-camera" id="try-another-camera"></a>
 
