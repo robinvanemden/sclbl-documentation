@@ -18,7 +18,3 @@ To do so, go to the model page, then click on the _Edit_ button to access the in
 When done editing, make sure to click on the _Save_ button at the bottom of the page.
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2024-05-22 14-05-48.png" alt=""><figcaption><p>Interface for editing the model normalization values.</p></figcaption></figure>
-
-## Off-the-shelf models
-
-Nx AI Platform provides a [catalog of free NetsPresso models](https://admin.sclbl.net/catalogue/66be5748-1035-4ae7-aa95-e6e1d8ec73c5) that contains optimized models ready to be used. To deploy one of the models, simply go to your Nx-registered device and assign the desired model.
