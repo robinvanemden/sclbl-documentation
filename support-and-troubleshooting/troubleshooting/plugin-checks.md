@@ -27,7 +27,7 @@ If the plugin is not available, check if the plugin is present (and what version
 * You need Nx Meta version 6.0 or newer.
 * The plugin version needs to be version 4.0 or higher. This document uses the plugin version 4.1 or higher.
   * It could be the case that the plugin is not properly installed. Follow the instructions at [2.-install-nx-ai-manager-plugin.md](../../nx-ai-manager/2.-install-nx-ai-manager-plugin.md "mention"), and check that the plugin file is installed at:`/opt/networkoptix-metavms/mediaserver/bin/plugins/nxai_plugin/libnxai_plugin.so`
-  * If the plugin file is not there, or it exists but the server still cannot detect it, follow the instructions at [4.-manual-plugin-installation.md](../../nx-ai-manager/4.-manual-plugin-installation.md "mention")​
+  * If the plugin file is not there, or it exists but the server still cannot detect it, follow the instructions at [5.-manual-plugin-installation.md](../../nx-ai-manager/5.-manual-plugin-installation.md "mention")​
 
 ### Are the needed drivers installed <a href="#are-the-needed-drivers-installed" id="are-the-needed-drivers-installed"></a>
 
