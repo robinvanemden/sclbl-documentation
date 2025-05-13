@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Nx AI Manager plugin v4.3](README.md)
+* [Nx AI Manager plugin v4.4](README.md)
 
 ## Nx AI Manager
 
