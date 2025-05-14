@@ -9,7 +9,7 @@ If you are getting error messages or not seeing any bounding boxes in your Nx Cl
 {% hint style="info" %}
 **Minimum Hardware Requirements**
 
-* **x86\_64 Systems**: Dual-core Intel i5 (10th Gen quad-core equivalent) or higher, with at least 4 GB of RAM\
+* **x86\_64 Systems**: Intel i5 (10th Gen quad-core equivalent) or higher, with at least 4 GB of RAM\
   &#xNAN;_&#x4E;ote: The processor must support AVX2 instructions. Check_ [_here_](https://avx2checker.com/processors) _if you are in doubt._
 * **ARM Systems**: Raspberry Pi 4B equivalent or higher (AARCH64), with at least 4 GB of RAM
 
