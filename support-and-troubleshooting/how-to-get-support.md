@@ -22,28 +22,28 @@ Logs can be gathered by running the following shell script on the relevant machi
 ```bash
 #!/bin/bash
 
-# This script is used to gather information about the HW and SW of the system, in addition to information about the AI Manager and the AI Plugin.
-# The information is stored in a directory located in ~/nxai_info and then compressed into a file named ~/nxai_info.tgz.
-
+# This script is used to gather information about the HW and SW of the system, in addition to information about the Nx AI Manager.
+# The information is stored in a directory located in ~/nxai_troubleshooting and then compressed into a file named ~/nxai_troubleshooting.tgz.
+# To get support, please attach the compressed file to your support request.
+# NOTE: No sensitive information is collected, only the basic system information and the Nx AI Manager information.
 # Enable debug mode
 # set -x
 
 # Create directory where the information will be stored
 current_dir=$(pwd)
-info_dir=~/nxai_info
+info_dir=~/nxai_troubleshooting
 rm -rf $info_dir >/dev/null 2>&1
 rm -rf $info_dir.tgz >/dev/null 2>&1
 mkdir -p $info_dir
 
 # Redirect all output and error streams to a log file
-log_file="$info_dir/nxai_info.log"
+log_file="$info_dir/nxai_troubleshooting.log"
 exec > >(tee -a "$log_file") 2>&1
 
 ############################### Basic System Information
 lsb_release -a >$info_dir/lsb_release.txt
 uname -a >$info_dir/uname.txt
 lscpu >$info_dir/lscpu.txt
-lshw >$info_dir/lshw.txt
 lspci >$info_dir/lspci.txt
 df -h >$info_dir/df.txt
 ldd --version >$info_dir/ldd_version.txt
@@ -55,10 +55,10 @@ if [ -d /opt/networkoptix-metavms/mediaserver/bin/plugins/ ]; then
 elif [ -d /opt/networkoptix/mediaserver/bin/plugins/ ]; then
     plugins_dir="/opt/networkoptix/mediaserver/bin/plugins/"
 else
-    echo "MediaServer is not installed."
+    echo "Mediaserver is not installed."
     exit 1
 fi
-# get MediaServer installed version
+# get Mediaserver installed version
 cat $plugins_dir/../../build_info.txt >$info_dir/mediaserver_info.txt
 
 ############################### Check if AI Plugin is installed
@@ -106,14 +106,7 @@ cp $bin_dir/../etc/settings.json $info_dir/settings.json
 
 ############################### Check if AI Manager is running
 # get running processes
-ps aux | grep sclbl >$info_dir/nxai_manager_ps_aux.txt
 ps aux | grep nxai >>$info_dir/nxai_manager_ps_aux.txt
-# start the ai manager manually and stop it after 5 seconds
-echo "Running AI Manager for 5 seconds..."
-cd $bin_dir
-timeout 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
-# Use the following line if the ai manager doesn't exit after 5 seconds
-# timeout --signal=SIGKILL 5s ./sclblmod >$info_dir/ai_manager_run.txt 2>&1
 
 ############################### Check connectivity to the Nx AI Cloud
 # Check if curl or wget is available
@@ -137,19 +130,21 @@ elif command -v wget >/dev/null 2>&1; then
 else
     echo "ERROR: Neither curl nor wget is installed."
 fi
-
-wget -q -O "./nxai_cloud_connectivity.txt" https://api.sclbl.nxvms.com/dev/
+# Get the latency to the Nx AI Cloud
+ping -c 10 api.sclbl.nxvms.com >$info_dir/nxai_cloud_ping.txt
 
 ############################### tar compress the information
 cd $info_dir/..
 tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed to compress the information."
+rm -rf $info_dir >/dev/null 2>&1
 
 echo "System information gathering complete."
 echo "The collected information is stored in $info_dir.tgz"
+echo "Please attach this archive to your support request, and optionally delete it from the disk."
 cd "$current_dir"
 
 ```
 
 </details>
 
-This will create a file called `nxai_info.tgz` in the home directory. Attaching this file to your support question will make it much easier for us to help you.
+This will create a file called `nxai_troubleshooting.tgz` in the home directory. Attaching this file to your support question will make it much easier for us to help you.
