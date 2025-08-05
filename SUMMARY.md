@@ -44,7 +44,7 @@
 
 ## Videos
 
-* [Howto videos](videos/howto-videos.md)
+* [How-to videos](videos/how-to-videos.md)
 
 ## AI Accelerators Support
 

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Use your model
 
 After the model is uploaded the model is ready to be used on your devices. To use a model on your device follow the steps below.
