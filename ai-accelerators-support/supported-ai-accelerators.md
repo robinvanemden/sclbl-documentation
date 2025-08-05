@@ -8,8 +8,8 @@ The following table contains a compiled list of supported runtimes:
 | ----------------------------------------------------------------------- | ---------------- | ------------------------------------- |
 | CPU                                                                     | aarch64, x86\_64 | -                                     |
 | Intel (OpenVINO)                                                        | x86\_64          | -                                     |
-| Hailo-8                                                                 | x86\_64          | 4.17.0, 4.18.0, 4.19.0                |
-| Hailo-8L                                                                | aarch64          | 4.18.0, 4.19.0                        |
+| Hailo-8                                                                 | x86\_64          | 4.17.0, 4.18.0, 4.19.0, 4.20.0        |
+| Hailo-8L                                                                | aarch64          | 4.18.0, 4.19.0, 4.20.0                |
 | Hailo-15 (coming soon)                                                  |                  |                                       |
 | MemryX                                                                  | x86\_64          | 2.2.37                                |
 | Nvidia [CUDA](https://developer.nvidia.com/cuda-toolkit-archive)        | x86\_64          | CUDA 11, CUDA 12                      |
