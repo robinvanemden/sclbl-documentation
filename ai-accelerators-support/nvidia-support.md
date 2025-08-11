@@ -8,19 +8,7 @@ For the AI Manager to work on the machine with Nvidia GPUs, the machine needs to
 
 ### On X86\_64
 
-1. This file `/proc/driver/nvidia/version` needs to be available.
-2.  This file `/usr/local/cuda/version.json` needs to be available and contain the install CUDA version. An example of the file should like this:
-
-    ```cpp
-    {
-       "cuda" : {
-          "name" : "CUDA SDK",
-          "version" : "12.2.20230823"
-       },
-       ...
-    }
-    ```
-3. The `nvidia-smi` command should be installed and has to be compatible with the installed Nvidia drivers.
+1. The `nvidia-smi` command should be installed, has to be compatible with the installed Nvidia drivers and works properly.
 
 ### On AARCH64
 
