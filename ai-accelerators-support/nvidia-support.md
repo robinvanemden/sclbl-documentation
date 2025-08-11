@@ -42,14 +42,14 @@ First setup to setup the runtime manually is to download the correct runtime lib
 
 ### For X86\_64
 
-* [CUDA 11](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/nvidia-cuda_11-x86_64-ort.tar.gz)
-* [CUDA 12](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/nvidia-cuda_12-x86_64-ort.tar.gz)
+* [CUDA 11](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-4/nvidia-cuda_11-x86_64-ort.tar.gz)
+* [CUDA 12](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-4/nvidia-cuda_12-x86_64-ort.tar.gz)
 
 ### For AARCH64
 
-* [Jetpack 4.6](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/nvidia-cuda_10-aarch64-ort.tar.gz)
-* [Jetpack 5.x](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/nvidia-cuda_11-aarch64-ort.tar.gz)
-* [Jetpack 6.0 ](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-1/nvidia-cuda_12-aarch64-ort.tar.gz)
+* [Jetpack 4.6](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-4/nvidia-cuda_10-aarch64-ort.tar.gz)
+* [Jetpack 5.x](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-4/nvidia-cuda_11-aarch64-ort.tar.gz)
+* [Jetpack 6.0 ](https://artifactory.nxvms.dev/artifactory/nxai_open/OAAX/runtimes/v4-4/nvidia-cuda_12-aarch64-ort.tar.gz)
 
 When the download is complete, unpack the archive in this directory using this command:
 
