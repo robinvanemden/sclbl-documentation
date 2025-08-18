@@ -133,6 +133,15 @@ fi
 # Get the latency to the Nx AI Cloud
 ping -c 10 api.sclbl.nxvms.com >$info_dir/nxai_cloud_ping.txt
 
+# Get information about DEEPX if available
+# Checking if dxrt-cli is installed
+if command -v dxrt-cli >/dev/null 2>&1; then
+    echo "dxrt-cli is installed."
+    dxrt-cli -s >$info_dir/dxrt_cli_version.txt 2>&1
+else
+    echo "dxrt-cli is not installed."
+fi
+
 ############################### tar compress the information
 cd $info_dir/..
 tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed to compress the information."
