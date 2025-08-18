@@ -56,7 +56,6 @@ elif [ -d /opt/networkoptix/mediaserver/bin/plugins/ ]; then
     plugins_dir="/opt/networkoptix/mediaserver/bin/plugins/"
 else
     echo "Mediaserver is not installed."
-    exit 1
 fi
 # get Mediaserver installed version
 cat $plugins_dir/../../build_info.txt >$info_dir/mediaserver_info.txt
@@ -66,7 +65,6 @@ if [ -f $plugins_dir/nxai_plugin/libnxai_plugin.so ]; then
     echo "AI Plugin is installed."
 else
     echo "AI Plugin is not installed."
-    exit 2
 fi
 libnxai_plugin_dir=$plugins_dir/nxai_plugin/
 # Check if tree is installed
@@ -87,7 +85,6 @@ if [ -d $libnxai_plugin_dir/nxai_manager/bin ]; then
     echo "AI Manager is installed."
 else
     echo "AI Manager is not installed."
-    exit 3
 fi
 nxai_manager_dir=$libnxai_plugin_dir/nxai_manager/
 bin_dir=$nxai_manager_dir/bin/
@@ -97,7 +94,6 @@ if [ -f $bin_dir/installed_runtime.txt ]; then
     echo "Runtime might be installed."
 else
     echo "Runtime not installed."
-    exit 4
 fi
 # Get the installed runtime information
 cp $bin_dir/installed_runtime.txt $info_dir/installed_runtime.txt
