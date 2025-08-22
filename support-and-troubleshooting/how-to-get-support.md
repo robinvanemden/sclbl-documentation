@@ -21,7 +21,6 @@ Logs can be gathered by running the following shell script on the relevant machi
 
 ```bash
 #!/bin/bash
-
 # This script is used to gather information about the HW and SW of the system, in addition to information about the Nx AI Manager.
 # The information is stored in a directory located in ~/nxai_troubleshooting and then compressed into a file named ~/nxai_troubleshooting.tgz.
 # To get support, please attach the compressed file to your support request.
@@ -98,8 +97,8 @@ else
 fi
 # Get the installed runtime information
 cp $bin_dir/installed_runtime.txt $info_dir/installed_runtime.txt
-# Get the settings file
-cp $bin_dir/../etc/settings.json $info_dir/settings.json
+# Get all settings files
+find $libnxai_plugin_dir -name "*.json" -exec cp {} $info_dir/ \;
 
 ############################### Check if AI Manager is running
 # get running processes
@@ -107,23 +106,23 @@ ps aux | grep nxai >>$info_dir/nxai_manager_ps_aux.txt
 
 ############################### Check connectivity to the Nx AI Cloud
 # Check if curl or wget is available
+echo "Downloading test files from the Nx AI Cloud to measure download speed..."
 if command -v curl >/dev/null 2>&1; then
     echo "Using curl"
     # check if Nx AI Cloud is reachable
     curl -s https://api.sclbl.nxvms.com/dev/ >$info_dir/nxai_cloud_connectivity.txt
     # Download a file from the Nx AI Cloud to measure the download speed
-    echo "Downloading a test file from the Nx AI Cloud to measure download speed..."
-    curl -s -m 10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -o /dev/null -w "%{speed_download}" |
+    curl -s -m 20 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -o /dev/null -w "%{speed_download}" |
         awk '{print "Model download speed: " $1/1048576 " MB/sec"}' \
-            >$info_dir/nxai_cloud_download_speed_1.txt
-    curl -s -m 10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -o /dev/null -w "%{speed_download}" |
+            >$info_dir/nxai_cloud_download_speed_of_model.txt
+    curl -s -m 20 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -o /dev/null -w "%{speed_download}" |
         awk '{print "Runtime download speed: " $1/1048576 " MB/sec"}' \
-            >$info_dir/nxai_cloud_download_speed_2.txt
+            >$info_dir/nxai_cloud_download_speed_of_runtime.txt
 elif command -v wget >/dev/null 2>&1; then
     echo "Using wget"
     wget -q -O "$info_dir/nxai_cloud_connectivity.txt" https://api.sclbl.nxvms.com/dev/
-    wget --timeout=10 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -O /dev/null >$info_dir/nxai_cloud_download_speed_1.txt 2>&1
-    wget --timeout=10 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -O /dev/null >$info_dir/nxai_cloud_download_speed_2.txt 2>&1
+    wget --timeout=20 "https://cdn.sclbl.nxvms.com/benchmark.bin?size=10" -O /dev/null >$info_dir/nxai_cloud_download_speed_of_model.txt 2>&1
+    wget --timeout=20 "https://artifactory.nxvms.dev/artifactory/nxai_open/files/23MB.bin" -O /dev/null >$info_dir/nxai_cloud_download_speed_of_runtime.txt 2>&1
 else
     echo "ERROR: Neither curl nor wget is installed."
 fi
@@ -139,6 +138,15 @@ else
     echo "dxrt-cli is not installed."
 fi
 
+# Get information about Nvidia if available
+# Checking if nvidia-smi is installed
+if command -v nvidia-smi >/dev/null 2>&1; then
+    echo "nvidia-smi is installed."
+    nvidia-smi >$info_dir/nvidia_smi.txt 2>&1
+else
+    echo "nvidia-smi is not installed."
+fi
+
 ############################### tar compress the information
 cd $info_dir/..
 tar -cvf $info_dir.tgz "$(basename $info_dir)" >/dev/null || echo "ERROR: Failed to compress the information."
@@ -146,8 +154,9 @@ rm -rf $info_dir >/dev/null 2>&1
 
 echo "System information gathering complete."
 echo "The collected information is stored in $info_dir.tgz"
-echo "Please attach this archive to your support request, and optionally delete it from the disk."
+echo "Please attach this archive to your support request."
 cd "$current_dir"
+
 
 ```
 
