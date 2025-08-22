@@ -54,6 +54,7 @@ if [ -d /opt/networkoptix-metavms/mediaserver/bin/plugins/ ]; then
     plugins_dir="/opt/networkoptix-metavms/mediaserver/bin/plugins/"
 elif [ -d /opt/networkoptix/mediaserver/bin/plugins/ ]; then
     plugins_dir="/opt/networkoptix/mediaserver/bin/plugins/"
+    echo "This is not a Meta installation"
 else
     echo "Mediaserver is not installed."
 fi
