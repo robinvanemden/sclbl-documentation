@@ -67,6 +67,10 @@ else
     echo "AI Plugin is not installed."
 fi
 libnxai_plugin_dir=$plugins_dir/nxai_plugin/
+
+# Check file permissions
+ls -lR $libnxai_plugin_dir/ >"$info_dir/nxai_plugin_permissions.txt"
+
 # Check if tree is installed
 if command -v tree >/dev/null 2>&1; then
     echo "Using tree to list files in the AI Plugin directory"
@@ -156,7 +160,6 @@ echo "System information gathering complete."
 echo "The collected information is stored in $info_dir.tgz"
 echo "Please attach this archive to your support request."
 cd "$current_dir"
-
 
 ```
 
