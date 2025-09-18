@@ -46,6 +46,7 @@ lscpu >$info_dir/lscpu.txt
 lspci >$info_dir/lspci.txt
 df -h >$info_dir/df.txt
 ldd --version >$info_dir/ldd_version.txt
+timedatectl >$info_dir/timedatectl.tx
 
 ############################### Check if the mediaserver is installed
 plugins_dir=""
