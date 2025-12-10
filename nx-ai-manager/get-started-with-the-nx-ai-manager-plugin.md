@@ -77,33 +77,33 @@ For other hardware architectures such as ARM, Nvidia Jetson Orin, Hailo, etc, pl
 
 To get started with Nx and the Nx AI Manager plugin, follow the steps outlined below:
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/1.-install-network-optix" %}
-[1. Install Network Optix](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/1.-install-network-optix)
-{% endcontent-ref %}
+{% stepper %}
+{% step %}
+### [Install a Network Optix client and server](1.-install-network-optix.md)&#x20;
+{% endstep %}
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-install-nx-ai-plugin" %}
-[2. Install NX AI Plugin](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-install-nx-ai-plugin)
-{% endcontent-ref %}
+{% step %}
+### [Install the Nx AI Plugin](2.-install-nx-ai-manager-plugin.md)
+{% endstep %}
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-configure-the-nx-ai-manager-plugin" %}
-[3. Configure the Nx AI Manager plugin](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/2.-configure-the-nx-ai-manager-plugin)
-{% endcontent-ref %}
+{% step %}
+### [Configure the Nx AI Manager Plugin](3.-configure-the-nx-ai-manager-plugin/)
+{% endstep %}
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/3.-other-network-optix-plugin-settings" %}
-[4. Other Network Optix Plugin Settings](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/3.-other-network-optix-plugin-settings)
-{% endcontent-ref %}
+{% step %}
+### [Other Network Optix Plugin Settings](4.-other-network-optix-plugin-settings.md)
+{% endstep %}
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/4.-manual-plugin-installation" %}
-[5. Manual Plugin Installation](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/4.-manual-plugin-installation)
-{% endcontent-ref %}
+{% step %}
+### [Manual Plugin Installation](5.-manual-plugin-installation.md)
+{% endstep %}
 
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/7.-advanced-configuration" %}
-[7. Advanced configuration](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/nx-ai-manager/7.-advanced-configuration)
-{% endcontent-ref %}
+{% step %}
+### [Advanced Configuration](7.-advanced-configuration/)
+{% endstep %}
 
-And because it's sometimes necessary:
-
-{% content-ref url="https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/support-and-troubleshooting/troubleshooting" %}
-[Troubleshooting](https://app.gitbook.com/s/tAnveGJ71G8niBIFFZ2k/support-and-troubleshooting/troubleshooting)
-{% endcontent-ref %}
+{% step %}
+### [Troubleshooting](../support-and-troubleshooting/troubleshooting/)
+{% endstep %}
+{% endstepper %}
 
